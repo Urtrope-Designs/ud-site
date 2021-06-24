@@ -1,0 +1,16 @@
+{
+  "title": "Urtrope Designs",
+  "url": "https://urtropedesigns.com/",
+  "description": "Games like you've always seen before.",
+  "feed": {
+    "subtitle": "Games like you've always seen before.",
+    "filename": "feed.xml",
+    "path": "/feed/feed.xml",
+    "url": "https://myurl.com/feed/feed.xml",
+    "id": "https://myurl.com/"
+  },
+  "author": {
+    "name": "Sean Cunningham",
+    "email": "boss@urtropedesigns.com"
+  }
+}
