@@ -12,11 +12,14 @@
   --stella-coral-dark: #bf7973;
   --stella-red: #59343b;
   --stella-blue: #bfd9d6;
-  --new-bg: #4A6F72;
-  --new-text: #FF7F5C;
+  --new-bg: #666;
+  --new-text: #FFF;
+  /* --new-text: #FF7F5C; */
   --new-primary: #6397eb;
   --new-secondary: #428CFF;
   --new-accent: #63B7AB;
+  --ud-font-headline: 'Montserrat Alternates', sans-serif;
+  --ud-font: 'Raleway', sans-serif;
 }
 * {
   box-sizing: border-box;
@@ -25,9 +28,12 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: sans-serif;
+  font-family: var(--ud-font);
   color: var(--new-text);
   background-color: var(--new-bg);
+}
+.ud-font-headline {
+  font-family: var(--ud-font-headline);
 }
 p:last-child {
   margin-bottom: 0;
