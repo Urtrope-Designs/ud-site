@@ -12,12 +12,13 @@
   --stella-coral-dark: #bf7973;
   --stella-red: #59343b;
   --stella-blue: #bfd9d6;
-  --new-bg: #666;
+  --new-bg: #1a2b49;
   --new-text: #FFF;
-  /* --new-text: #FF7F5C; */
-  --new-primary: #6397eb;
+  --new-accent: #FF7F5C;
+  --new-primary: #35FFE2;
+  --new-primary2: #00FF9E;
   --new-secondary: #428CFF;
-  --new-accent: #63B7AB;
+  --new-tertiary: #6397eb;
   --ud-font-headline: 'Montserrat Alternates', sans-serif;
   --ud-font: 'Raleway', sans-serif;
 }
@@ -51,7 +52,7 @@ a[href] {
   color: var(--new-primary);
 }
 a[href]:visited {
-  color: var(--new-secondary);
+  color: var(--new-primary2);
 }
 main {
   padding: 1rem;
@@ -60,7 +61,7 @@ main :first-child {
   margin-top: 0;
 }
 header {
-  border-bottom: 1px dashed var(--new-primary);
+  border-bottom: 1px dashed var(--new-tertiary);
 }
 header:after {
   content: "";
@@ -178,7 +179,7 @@ pre {
 .postlist-date,
 .postlist-item:before {
   font-size: 0.8125em; /* 13px /16 */
-  color: var(--darkgray);
+  color: var(--new-tertiary);
 }
 .postlist-date {
   word-spacing: -0.5px;
