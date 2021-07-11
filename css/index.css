@@ -1,3 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 :root {
   --red: #C5004A;
   --darkred: #7F0036;
@@ -19,8 +24,6 @@
   --new-primary2: #00FF9E;
   --new-secondary: #428CFF;
   --new-tertiary: #6397eb;
-  --ud-font-headline: 'Montserrat Alternates', sans-serif;
-  --ud-font: 'Raleway', sans-serif;
 }
 * {
   box-sizing: border-box;
@@ -29,12 +32,8 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: var(--ud-font);
   color: var(--new-text);
   background-color: var(--new-bg);
-}
-.ud-font-headline {
-  font-family: var(--ud-font-headline);
 }
 p:last-child {
   margin-bottom: 0;
