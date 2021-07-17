@@ -4,6 +4,25 @@ module.exports = {
   purge: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    screens: {
+      'tablet': '640px',
+      'laptop': '1024px',
+      'desktop': '1280px',
+    },
+    colors: {
+      bg: 'var(--ud-background-color)',
+      text: 'var(--ud-text-color)',
+      accent: 'var(--ud-accent-color)',
+      primary: {
+        light: 'var(--ud-primary-color-light)',
+        DEFAULT: 'var(--ud-primary-color)',
+        dark: 'var(--ud-primary-color-dark)',
+      },
+      secondary: {
+        DEFAULT: 'var(--ud-secondary-color)',
+        dark: 'var(--ud-secondary-color-dark)',
+      },
+    },
     extend: {
       fontFamily: {
         'sans': ['Raleway', ...defaultTheme.fontFamily.sans],

@@ -5,9 +5,9 @@ tags:
 navtitle: Home
 ---
 
-<p>{{ metadata.description }}</p>
+<p class="font-extralight italic text-2xl text-accent mb-8">{{ metadata.description }}</p>
 
-<h1>Hottest 3 Projs</h1>
+<h1 class="font-headline font-bold text-4xl mb-4">Hottest 3 Projs:</h1>
 
 {% set projectslist = collections.projects | head(-3) %}
 {% include "projectslist.njk" %}
