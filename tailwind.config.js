@@ -10,7 +10,10 @@ module.exports = {
       'desktop': '1280px',
     },
     colors: {
-      bg: 'var(--ud-background-color)',
+      bg: {
+        DEFAULT: 'var(--ud-background-color)',
+        dark: 'var(--ud-background-color-dark)',
+      },
       text: 'var(--ud-text-color)',
       accent: 'var(--ud-accent-color)',
       primary: {
