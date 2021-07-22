@@ -64,10 +64,6 @@
   font-size: 0.8125em; /* 13px /16 */
   color: var(--new-tertiary);
 }
-.tmpl-home .postlist-link {
-  font-size: 1.1875em; /* 19px /16 */
-  font-weight: 700;
-}
 
 
 /* Tags */
