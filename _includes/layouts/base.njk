@@ -15,7 +15,7 @@
       <h1 class="font-headline font-bold m-4 animate-fade-in"><a href="{{ '/' | url }}" class="hover:underline">{{ metadata.title }}</a></h1>
       <ul class="font-headline m-4 animate-fade-in">
         {%- for nav in collections.nav | reverse -%}
-        <li class="inline-block mr-4{% if nav.url == page.url %} underline font-bold{% endif %}"><a href="{{ nav.url | url }}">{{ nav.data.navtitle }}</a></li>
+        <li class="inline-block mr-4{% if nav.url == page.url %} underline font-bold{% endif %}"><a href="{{ nav.url | url }}" class="hover:underline">{{ nav.data.navtitle }}</a></li>
         {%- endfor -%}
       </ul>
     </header>

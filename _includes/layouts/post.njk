@@ -2,10 +2,10 @@
 layout: layouts/base.njk
 templateClass: tmpl-post
 ---
-<h1 class="ud-font-headline">{{ title }}</h1>
+<h1 class="font-headline text-4xl mb-6">{{ title }}</h1>
 
-{{ content | safe }}
+<div class="mb-4">{{ content | safe }}</div>
 
-<p>aaaaand, <a href="{{ 'https://www.buymeacoffee.com/Urtropedesigns' | url }}">buymeacoffee</a></p>
+<p class="mb-4">aaaaand, <a href="{{ 'https://www.buymeacoffee.com/Urtropedesigns' | url }}">buymeacoffee</a></p>
 
-<p class="ud-font-headline"><a href="{{ '/' | url }}">← Home</a></p>
+<p class="font-headline"><a href="{{ '/' | url }}">← Home</a></p>
