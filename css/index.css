@@ -23,11 +23,6 @@
   }
 }
 
-@layer utilities {
-  .counter-increment-from-1 {
-    counter-increment: start-from 1;
-  }
-}
 
 :root {
   --red: #C5004A;
@@ -51,20 +46,6 @@
   --new-secondary: #428CFF;
   --new-tertiary: #6397eb;
 }
-
-/* Posts list */
-.postlist-item:before {
-  display: inline-block;
-  pointer-events: none;
-  content: "" counter(start-from, decimal-leading-zero) ". ";
-  line-height: 100%;
-  text-align: right;
-}
-.postlist-item:before {
-  font-size: 0.8125em; /* 13px /16 */
-  color: var(--new-tertiary);
-}
-
 
 /* Tags */
 .tag {
