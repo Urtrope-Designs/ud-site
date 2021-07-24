@@ -2,6 +2,8 @@
 title: SelecQuest
 description: landing page for the smash hit idle rpg!
 layout: layouts/post.njk
+tags: 
+  - game
 ---
 Welcome to the home of SelecQuest, with three adventuring modes!
 
