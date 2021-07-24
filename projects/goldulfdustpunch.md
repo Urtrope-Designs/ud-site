@@ -2,6 +2,9 @@
 title: Goldulf - Dustpunch!
 description: landing page for the sick dungeon clean-up game!
 layout: layouts/post.njk
+tags:
+  - game
+  - phaser
 ---
 Huff! Puff! Clean up some stuff! As the lone surviving member of the (weirdly) unnamed clan that beat back the spectre of that ultimate evil - Goldulf! - in ages past, it is now your duty to tidy up a bit and release the souls of your forbears, which are basically just stuck there because there's so much junk everywhere. Armed with the only tool you'll need (I'm talking pixel-perfect fists), punch your way through endless Intellivision-looking dungeons in this, uh, game. 
 
