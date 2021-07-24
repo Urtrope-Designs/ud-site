@@ -35,20 +35,20 @@ module.exports = function(eleventyConfig) {
 
   /* Markdown Plugins */
   let markdownIt = require("markdown-it");
-  let markdownItAnchor = require("markdown-it-anchor");
+  // let markdownItAnchor = require("markdown-it-anchor");
   let options = {
     html: true,
     breaks: true,
     linkify: true
   };
-  let opts = {
-    permalink: true,
-    permalinkClass: "direct-link",
-    permalinkSymbol: "#"
-  };
+  // let opts = {
+  //   permalink: true,
+  //   permalinkClass: "no-underline ml-0.5 opacity-0 hover:opacity-100",
+  //   permalinkSymbol: "#"
+  // };
 
   eleventyConfig.setLibrary("md", markdownIt(options)
-    .use(markdownItAnchor, opts)
+    // .use(markdownItAnchor, opts)
   );
 
   eleventyConfig.setBrowserSyncConfig({
