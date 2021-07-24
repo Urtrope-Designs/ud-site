@@ -1,3 +1,5 @@
+const tailwindcss = require('tailwindcss')
+const theme = require('tailwindcss/defaultTheme')
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
@@ -39,7 +41,23 @@ module.exports = {
           '0%': { opacity: 0, transform: 'translateY(.5rem)' },
           '100%': { opacity: 1, transform: 'translateY(0)' }
         }
-      }
+      },
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            color: theme('colors.text'),
+            h2: {
+              color: theme('colors.text')
+            },
+            a: {
+              color: theme('colors.primary'),
+              '&:visited': {
+                color: theme('colors.primary.light')
+              }
+            }
+          }
+        }
+      }),
     },
   },
   variants: {
@@ -48,5 +66,5 @@ module.exports = {
       textColor: ['visited']
     }
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 }
