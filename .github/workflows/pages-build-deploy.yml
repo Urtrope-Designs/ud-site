@@ -44,3 +44,4 @@ jobs:
         commit_user_name: "GitHub Actions"
         commit_user_email: "actions@github.com"
         commit_author: "Author <actions@github.com>"
+        repository: ./_site
