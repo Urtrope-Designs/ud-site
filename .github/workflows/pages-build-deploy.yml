@@ -1,4 +1,4 @@
-name: NodeJS with Webpack
+name: Pages Build & Deploy
 
 on:
   push:
@@ -7,8 +7,11 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
+  build_deploy:
     runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
 
     strategy:
       matrix:
@@ -36,10 +39,8 @@ jobs:
     - name: Commit and Push Changes
       uses: stefanzweifel/git-auto-commit-action@v4
       with:
-        commit-message: "Deploy urtropedesigns.com to github.com/Urtrope-Designs/ud-site.git:gh-pages"
+        commit_message: "Deploy urtropedesigns.com to github.com/Urtrope-Designs/ud-site.git:gh-pages"
         branch: gh-pages
-        commit-user-name: "GitHub Actions"
-        commit-user-email: "actions@github.com"
-        commit-options: "--author='GitHub Actions <actions@github.com>'"
-        push-branch: true
-        access-token: ${{ secrets.GITHUB_TOKEN }}
+        commit_user_name: "GitHub Actions"
+        commit_user_email: "actions@github.com"
+        commit_author: "Author <actions@github.com>"
