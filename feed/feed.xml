@@ -4,7 +4,7 @@
 	<subtitle>Games like you&#39;ve always seen before.</subtitle>
 	<link href="https://myurl.com/feed/feed.xml" rel="self"/>
 	<link href="https://urtropedesigns.com/"/>
-	<updated>2022-11-21T04:20:08Z</updated>
+	<updated>2023-04-17T02:13:37Z</updated>
 	<id>https://myurl.com/</id>
 	<author>
 		<name>Sean Cunningham</name>
@@ -14,7 +14,7 @@
 	<entry>
 		<title>Barenziah Tracker</title>
 		<link href="https://urtropedesigns.com/projects/barenziahtracker/"/>
-		<updated>2022-11-21T04:20:08Z</updated>
+		<updated>2023-04-17T02:13:37Z</updated>
 		<id>https://urtropedesigns.com/projects/barenziahtracker/</id>
 		<content type="html">&lt;p&gt;Trying to pwn Skyrim by tracking down all the Stones of Barenziah, but can&#39;t remember which ones you&#39;ve gotten already or where to look for the rest? Then you&#39;ve come to the fortuitest place!&lt;/p&gt;
 &lt;p&gt;Go whole hog with these native apps and track down all the stones in no time!&lt;/p&gt;
@@ -32,7 +32,7 @@
 	<entry>
 		<title>Goldulf - Dustpunch!</title>
 		<link href="https://urtropedesigns.com/projects/goldulfdustpunch/"/>
-		<updated>2022-11-21T04:20:08Z</updated>
+		<updated>2023-04-17T02:13:37Z</updated>
 		<id>https://urtropedesigns.com/projects/goldulfdustpunch/</id>
 		<content type="html">&lt;p&gt;Huff! Puff! Clean up some stuff! As the lone surviving member of the (weirdly) unnamed clan that beat back the spectre of that ultimate evil - Goldulf! - in ages past, it is now your duty to tidy up a bit and release the souls of your forbears, which are basically just stuck there because there&#39;s so much junk everywhere. Armed with the only tool you&#39;ll need (I&#39;m talking pixel-perfect fists), punch your way through endless Intellivision-looking dungeons in this, uh, game.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://dustpunch.urtropedesigns.com/&quot;&gt;Download the PWA today&lt;/a&gt; and PUNCH! SOME!! DUST!!!&lt;/p&gt;
@@ -43,9 +43,32 @@
 	</entry>
 	
 	<entry>
+		<title>Skyrim Potion Companion</title>
+		<link href="https://urtropedesigns.com/projects/potioncompanion/"/>
+		<updated>2023-04-17T02:13:37Z</updated>
+		<id>https://urtropedesigns.com/projects/potioncompanion/</id>
+		<content type="html">&lt;h2&gt;Brew the most potent potions; now with 50% more ease!&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Easily craft the best potions for your needs&lt;/li&gt;
+&lt;li&gt;Save time: select your goal and be immediately presented with top-notch recipes&lt;/li&gt;
+&lt;li&gt;Get clear ingredient lists with images and acquisition tips&lt;/li&gt;
+&lt;li&gt;Simplify your brewing process without inventory checklists or confusing confusion&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Content/Data/Calculations for this app (including images) were pulled from the &amp;quot;Alchemy Effects&amp;quot; and other articles on the &lt;a href=&quot;https://en.uesp.net/wiki/Skyrim:Alchemy_Effects&quot;&gt;Unofficial Elder Scrolls Pages&lt;/a&gt; wiki, as well as Bethesda&#39;s official Creation Kit tool.&lt;/p&gt;
+&lt;!-- &lt;div&gt;
+&lt;a href=&quot;https://apps.apple.com/us/app/barenziah-tracker/id1585514338?itsct=apps_box_badge&amp;amp;itscg=30200&quot; style=&quot;overflow: hidden; border-radius: 13px; width: 250px; height: 83px;&quot;&gt;&lt;img src=&quot;https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;amp;releaseDate=1631750400&amp;h=c37338d49b71f7793fee267a0d9cc70c&quot; alt=&quot;Download on the App Store&quot; style=&quot;border-radius: 13px; width: calc(200rem / 16); margin: 0; display: inline&quot;&gt;&lt;/a&gt;
+&lt;a href=&#39;https://play.google.com/store/apps/details?id=com.urtropedesigns.barenziahtracker&amp;pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1&#39;&gt;&lt;img alt=&#39;Get it on Google Play&#39; src=&#39;https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png&#39; style=&quot;width: calc(240rem / 16); margin: 0; display: inline;&quot;/&gt;&lt;/a&gt;
+&lt;/div&gt; --&gt;
+&lt;h2&gt;Some legal stuff&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://urtropedesigns.com/about/privacy-policy-potion-companion&quot;&gt;Privacy Policy&lt;/a&gt;&lt;/p&gt;
+&lt;!-- Google Play and the Google Play logo are trademarks of Google LLC. --&gt;
+</content>
+	</entry>
+	
+	<entry>
 		<title>SelecQuest</title>
 		<link href="https://urtropedesigns.com/projects/selecquest/"/>
-		<updated>2022-11-21T04:20:08Z</updated>
+		<updated>2023-04-17T02:13:37Z</updated>
 		<id>https://urtropedesigns.com/projects/selecquest/</id>
 		<content type="html">&lt;p&gt;Welcome to the home of SelecQuest, with three adventuring modes!&lt;/p&gt;
 &lt;p&gt;Download the &lt;a href=&quot;https://selecquest.urtropedesigns.com/&quot;&gt;PWA today&lt;/a&gt;!&lt;/p&gt;
