@@ -67,6 +67,16 @@
   </url>
   
   <url>
+    <loc>https://urtropedesigns.com/tags/game/</loc>
+    <lastmod>2023-04-17</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://urtropedesigns.com/tags/phaser/</loc>
+    <lastmod>2023-04-17</lastmod>
+  </url>
+  
+  <url>
     <loc>https://urtropedesigns.com/tags/react/</loc>
     <lastmod>2023-04-17</lastmod>
   </url>
@@ -78,16 +88,6 @@
   
   <url>
     <loc>https://urtropedesigns.com/tags/capacitor/</loc>
-    <lastmod>2023-04-17</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://urtropedesigns.com/tags/game/</loc>
-    <lastmod>2023-04-17</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://urtropedesigns.com/tags/phaser/</loc>
     <lastmod>2023-04-17</lastmod>
   </url>
 </urlset>
