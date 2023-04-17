@@ -12,10 +12,10 @@ jobs:
     
     permissions:
       contents: write
-
+      
     strategy:
       matrix:
-        node-version: [14.x, 16.x, 18.x]
+        node-version: [18.x]
 
     steps:
     - uses: actions/checkout@v3
@@ -36,12 +36,8 @@ jobs:
     - name: Build
       run: npm run build
       
-    - name: Commit and Push Changes
-      uses: stefanzweifel/git-auto-commit-action@v4
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
       with:
-        commit_message: "Deploy urtropedesigns.com to github.com/Urtrope-Designs/ud-site.git:gh-pages"
-        branch: gh-pages
-        commit_user_name: "GitHub Actions"
-        commit_user_email: "actions@github.com"
-        commit_author: "Author <actions@github.com>"
-        repository: ./_site
+        publish_dir: ./_site
+        github_token: ${{ secrets.GITHUB_TOKEN }}
