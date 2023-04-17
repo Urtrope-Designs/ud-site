@@ -12,7 +12,7 @@ tags:
 * Easily craft the best potions for your needs
 * Save time: select your goal and be immediately presented with top-notch recipes
 * Get clear ingredient lists with images and acquisition tips
-* Simplify your brewing process without inventory checklists or confusing confusion
+* Simplify your brewing process without fiddly inventory checklists or confusing confusion
 
 Content/Data/Calculations for this app (including images) were pulled from the "Alchemy Effects" and other articles on the [Unofficial Elder Scrolls Pages](https://en.uesp.net/wiki/Skyrim:Alchemy_Effects) wiki, as well as Bethesda's official Creation Kit tool.
 <!-- <div>
