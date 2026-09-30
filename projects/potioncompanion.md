@@ -1,11 +1,16 @@
 ---
 title: Skyrim Potion Companion
 description: landing page for the quickest route to the helpfulest potion recipes
-layout: layouts/post.njk
 tags:
   - react
   - utility
   - capacitor
+summary: Pick the effect you want and get the best Skyrim potion recipes, fast.
+role: Solo – design and development
+tools: [React, Ionic, Capacitor]
+order: 5
+hero:
+heroAlt:
 ---
 ## Brew the most potent potions; now with 50% more ease!
 
