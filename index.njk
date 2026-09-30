@@ -10,5 +10,5 @@ layout: layouts/home.njk
 
 <h1 class="font-headline font-bold text-4xl mb-4">Hottest Projs:</h1>
 
-{% set projectslist = collections.projects | head(-5) %}
+{% set projectslist = collections.projects | sortByOrder %}
 {% include "projectslist.njk" %}

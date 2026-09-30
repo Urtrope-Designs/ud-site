@@ -4,6 +4,11 @@ description: landing page for the smash hit idle rpg!
 layout: layouts/post.njk
 tags: 
   - game
+summary: An idle RPG with three adventuring modes, standing on the shoulders of Progress Quest.
+tools: [Stencil, TypeScript, Capacitor]
+order: 5
+hero:
+heroAlt:
 ---
 Welcome to the home of SelecQuest, with three adventuring modes!
 

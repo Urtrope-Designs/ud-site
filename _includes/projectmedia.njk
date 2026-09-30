@@ -1,0 +1,18 @@
+{#
+  Renders a project's hero media at 16:10: a muted looping video for .mp4/.webm,
+  an image for anything else, or a placeholder box until real media exists.
+#}
+{% macro projectMedia(src, alt, label, zoomOnHover=false) %}
+<div class="aspect-[16/10] overflow-hidden rounded-md bg-bg-dark">
+  {%- set mediaClass = "w-full h-full object-cover" + (" motion-safe:transition-transform motion-safe:duration-200 group-hover:scale-[1.02] group-focus-visible:scale-[1.02]" if zoomOnHover else "") -%}
+  {%- if src and (src.endsWith('.mp4') or src.endsWith('.webm')) %}
+  <video class="{{ mediaClass }}" src="{{ src | url }}" autoplay muted loop playsinline aria-label="{{ alt }}"></video>
+  {%- elif src %}
+  <img class="{{ mediaClass }}" src="{{ src | url }}" alt="{{ alt }}" loading="lazy">
+  {%- else %}
+  <div class="w-full h-full flex items-center justify-center p-4 border border-dashed border-secondary rounded-md text-secondary text-sm text-center" role="img" aria-label="{{ label }} – media coming soon">
+    {{ label }}<br>media coming soon
+  </div>
+  {%- endif %}
+</div>
+{% endmacro %}

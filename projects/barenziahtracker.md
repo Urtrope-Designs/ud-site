@@ -6,6 +6,11 @@ tags:
   - react
   - utility
   - capacitor
+summary: A native iOS and Android checklist for hunting down all 24 Stones of Barenziah.
+tools: [React, Ionic, Capacitor]
+order: 4
+hero:
+heroAlt:
 ---
 Trying to pwn Skyrim by tracking down all the Stones of Barenziah, but can't remember which ones you've gotten already or where to look for the rest? Then you've come to the fortuitest place!
 

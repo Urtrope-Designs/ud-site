@@ -28,6 +28,11 @@ module.exports = function(eleventyConfig) {
     return array.slice(0, n);
   });
 
+  // Sort by `order` front matter; items without one go last.
+  eleventyConfig.addFilter("sortByOrder", (array) => {
+    return [...array].sort((a, b) => (a.data.order ?? Infinity) - (b.data.order ?? Infinity));
+  });
+
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
   eleventyConfig.addCollection("tagList", require("./_11ty/getTagList"));

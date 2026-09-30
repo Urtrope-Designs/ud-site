@@ -6,6 +6,11 @@ tags:
   - react
   - utility
   - capacitor
+summary: Pick the effect you want and get the best Skyrim potion recipes, fast.
+tools: [React, Ionic, Capacitor]
+order: 3
+hero:
+heroAlt:
 ---
 ## Brew the most potent potions; now with 50% more ease!
 
