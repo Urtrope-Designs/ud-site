@@ -8,8 +8,8 @@ tags:
 summary: A native iOS and Android checklist for hunting down all 24 Stones of Barenziah.
 role: Solo – design and development
 tools: [React, Ionic, Capacitor]
-order: 4
-hero:
+order: 2
+hero: 
 heroAlt:
 ---
 Trying to pwn Skyrim by tracking down all the Stones of Barenziah, but can't remember which ones you've gotten already or where to look for the rest? Then you've come to the fortuitest place!

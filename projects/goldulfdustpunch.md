@@ -7,7 +7,7 @@ tags:
 summary: A pixel-art dungeon-cleaning brawler for web and mobile.
 role: Solo – design, art, code
 tools: [Phaser 3, TypeScript, Capacitor]
-order: 2
+order: 3
 hero:
 heroAlt:
 ---
