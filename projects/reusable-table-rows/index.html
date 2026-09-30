@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Goldulf - Dustpunch!</title>
-    <meta name="Description" content="landing page for the sick dungeon clean-up game!">
+    <title>Reusable Table Rows for Ad-Sales Dashboards</title>
+    <meta name="Description" content="How I turned one-off table rows into shared, configurable components for an enterprise ad-sales dashboard.">
     <link rel="stylesheet" href="/assets/main.css">
     <link rel="stylesheet" href="/css/prism-base16-monokai.dark.css">
     <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Sean Cunningham">
@@ -22,25 +22,30 @@
 <article class="max-w-3xl">
   <div class="mb-6">
 <div class="aspect-[16/10] overflow-hidden rounded-md bg-bg-dark">
-  <div class="w-full h-full flex items-center justify-center p-4 border border-dashed border-secondary rounded-md text-secondary text-sm text-center" role="img" aria-label="Goldulf - Dustpunch! – media coming soon">
-    Goldulf - Dustpunch!<br>media coming soon
+  <div class="w-full h-full flex items-center justify-center p-4 border border-dashed border-secondary rounded-md text-secondary text-sm text-center" role="img" aria-label="Reusable Table Rows for Ad-Sales Dashboards – media coming soon">
+    Reusable Table Rows for Ad-Sales Dashboards<br>media coming soon
   </div>
 </div>
 </div>
 
-  
-  <h1 class="font-headline text-4xl mb-2">Goldulf - Dustpunch!</h1>
-  <p class="text-lg mb-4">A pixel-art dungeon-cleaning brawler for web and mobile.</p>
+  <p class="text-sm text-accent mb-1">Professional work · Railroad19</p>
+  <h1 class="font-headline text-4xl mb-2">Reusable Table Rows for Ad-Sales Dashboards</h1>
+  <p class="text-lg mb-4">Turning one-off table rows into shared, configurable components for an enterprise ad-sales dashboard.</p>
   
   <dl class="flex flex-wrap gap-x-8 gap-y-1 mb-6 text-sm">
-    <div><dt class="inline text-secondary">My role:</dt> <dd class="inline">Solo – design, art, code</dd></div>
-    <div><dt class="inline text-secondary">Built with:</dt> <dd class="inline">Phaser 3, TypeScript, Capacitor</dd></div>
+    <div><dt class="inline text-secondary">My role:</dt> <dd class="inline">Front-end architecture and implementation</dd></div>
+    <div><dt class="inline text-secondary">Built with:</dt> <dd class="inline">Angular, TypeScript, PrimeNG</dd></div>
   </dl>
   
 
-  <div class="mb-4 prose"><p>Huff! Puff! Clean up some stuff! As the lone surviving member of the (weirdly) unnamed clan that beat back the spectre of that ultimate evil - Goldulf! - in ages past, it is now your duty to tidy up a bit and release the souls of your forbears, which are basically just stuck there because there's so much junk everywhere. Armed with the only tool you'll need (I'm talking pixel-perfect fists), punch your way through endless Intellivision-looking dungeons in this, uh, game.</p>
-<p><a href="https://dustpunch.urtropedesigns.com">Download the PWA today</a> and PUNCH! SOME!! DUST!!!</p>
-<p>And watch your local app store for beta versions of native-time-apps sooner or later.</p>
+  <div class="mb-4 prose"><!-- DRAFT copy – check details before publishing. NDA-safe: no real screens, client or data. -->
+<h2>The problem</h2>
+<p>At Railroad19 I built dashboard interfaces for a major media company's ad-sales teams, turning complex order data into clear visualizations. Those dashboards helped teams spot and act on $6.6M in mismarked orders – and a lot of that work happens in tables.</p>
+<p>As the app grew, each new table type picked up its own row component. The rows became unwieldy: the same display logic, copied with small variations, and every new table meant solving the same problems again.</p>
+<h2>What I did</h2>
+<p>I redesigned the rows as dynamic, reusable components that could be selected dynamically via JSON config. The display logic lives in one place, with the ability to pass in custom logic where needed, so other engineers can build a new table type on top of the same foundation.</p>
+<h2>The result</h2>
+<p>The approach became a pattern other engineers on the team adopted, and new tables no longer needed to duplicate display logic for common cell types.</p>
 </div>
 </article>
 
@@ -70,6 +75,6 @@
       <p class="mt-4 text-sm">© 2026 Sean Cunningham</p>
     </footer>
 
-    <!-- Current page: /projects/goldulfdustpunch/ -->
+    <!-- Current page: /projects/reusable-table-rows/ -->
   </body>
 </html>
