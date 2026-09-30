@@ -1,7 +1,7 @@
 {
   "name": "urtrope-designs-site",
-  "version": "0.0.1",
-  "description": "Games like you've always seen before.",
+  "version": "1.0.0",
+  "description": "A static site for showcasing my dev work",
   "scripts": {
     "watch": "npx eleventy --watch",
     "debug": "DEBUG=* npx eleventy",
@@ -15,18 +15,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/11ty/eleventy-base-blog.git"
+    "url": "git://github.com/Urtrope-Designs/ud-site.git"
   },
   "author": {
-    "name": "Urtrope Designs",
-    "email": "urtrope.designs@gmail.com",
+    "name": "Sean Cunningham",
+    "email": "scunningham77@proton.me",
     "url": "https://urtropedesigns.com/"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/11ty/eleventy-base-blog/issues"
+    "url": "https://github.com/Urtrope-Designs/ud-site/issues"
   },
-  "homepage": "https://github.com/11ty/eleventy-base-blog#readme",
+  "homepage": "https://urtropedesigns.com/",
   "devDependencies": {
     "@11ty/eleventy": "^1.0.2",
     "@11ty/eleventy-plugin-rss": "^1.2.0",

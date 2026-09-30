@@ -1,15 +1,12 @@
 ---
 layout: layouts/home.njk
-tags:
-  - nav
-navtitle: Home
 ---
 
-<div class="mt-4 mb-8">
-  <div class="p-4 bg-bg-dark text-center rounded shadow-md">
-    <p class="font-extralight italic text-2xl text-accent ">{{ metadata.description | safe}}</p>
-  </div>
-</div>
+<section class="mt-4 mb-12">
+  <p class="font-headline font-bold text-4xl">{{ metadata.author.name }}</p>
+  <p class="font-headline text-2xl text-accent mb-4">{{ metadata.role }}</p>
+  <p class="text-lg max-w-prose">{{ metadata.description }}</p>
+</section>
 
 <h1 class="font-headline font-bold text-4xl mb-4">Hottest Projs:</h1>
 

@@ -1,9 +1,10 @@
 {
-  "title": "Urtrope Designs",
+  "title": "Sean Cunningham",
+  "role": "Front-End Engineer",
   "url": "https://urtropedesigns.com/",
-  "description": "Games like you've always seen&nbsp;before.",
+  "description": "I build technology for humans. I iterate toward optimal solutions by staying curious about underlying needs, and relentlessly clarifying interfaces.",
   "feed": {
-    "subtitle": "Games like you've always seen before.",
+    "subtitle": "I build technology for humans.",
     "filename": "feed.xml",
     "path": "/feed/feed.xml",
     "url": "https://myurl.com/feed/feed.xml",
@@ -11,6 +12,9 @@
   },
   "author": {
     "name": "Sean Cunningham",
-    "email": "boss@urtropedesigns.com"
-  }
+    "email": "scunningham77@proton.me",
+    "linkedin": "https://www.linkedin.com/in/sean-cunningham77",
+    "github": "https://github.com/scunningham777"
+  },
+  "resume": "/resume.pdf"
 }

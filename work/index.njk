@@ -1,0 +1,12 @@
+---
+layout: layouts/base.njk
+title: Work
+templateClass: tmpl-post
+---
+
+<h1 class="font-headline font-bold text-4xl mb-4">Work</h1>
+
+<p class="mb-6">Project cards coming soon. In the meantime, here's everything so far:</p>
+
+{% set projectslist = collections.projects %}
+{% include "projectslist.njk" %}
