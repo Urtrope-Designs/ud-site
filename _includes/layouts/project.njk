@@ -6,6 +6,7 @@ templateClass: tmpl-post
 <article class="max-w-3xl">
   <div class="mb-6">{{ projectMedia(hero, heroAlt, title) }}</div>
 
+  {% if context %}<p class="text-sm text-accent mb-1">{{ context }}</p>{% endif %}
   <h1 class="font-headline text-4xl mb-2">{{ title }}</h1>
   {% if summary %}<p class="text-lg mb-6">{{ summary }}</p>{% endif %}
 
