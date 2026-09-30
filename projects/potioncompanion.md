@@ -1,7 +1,6 @@
 ---
 title: Skyrim Potion Companion
 description: landing page for the quickest route to the helpfulest potion recipes
-layout: layouts/post.njk
 tags:
   - react
   - utility

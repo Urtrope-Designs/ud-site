@@ -6,7 +6,7 @@
 <div class="aspect-[16/10] overflow-hidden rounded-md bg-bg-dark">
   {%- set mediaClass = "w-full h-full object-cover" + (" motion-safe:transition-transform motion-safe:duration-200 group-hover:scale-[1.02] group-focus-visible:scale-[1.02]" if zoomOnHover else "") -%}
   {%- if src and (src.endsWith('.mp4') or src.endsWith('.webm')) %}
-  <video class="{{ mediaClass }}" src="{{ src | url }}" autoplay muted loop playsinline aria-label="{{ alt }}"></video>
+  <video class="{{ mediaClass }}" src="{{ src | url }}" autoplay muted loop playsinline {% if alt %}aria-label="{{ alt }}"{% else %}aria-hidden="true"{% endif %}></video>
   {%- elif src %}
   <img class="{{ mediaClass }}" src="{{ src | url }}" alt="{{ alt }}" loading="lazy">
   {%- else %}

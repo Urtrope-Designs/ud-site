@@ -1,7 +1,6 @@
 ---
 title: Barenziah Tracker
 description: landing page for the super helping tracker app!
-layout: layouts/post.njk
 tags:
   - react
   - utility

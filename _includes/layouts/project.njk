@@ -1,0 +1,17 @@
+---
+layout: layouts/base.njk
+templateClass: tmpl-post
+---
+{% from "projectmedia.njk" import projectMedia %}
+<article class="max-w-3xl">
+  <div class="mb-6">{{ projectMedia(hero, heroAlt, title) }}</div>
+
+  <h1 class="font-headline text-4xl mb-2">{{ title }}</h1>
+  {% if summary %}<p class="text-lg mb-6">{{ summary }}</p>{% endif %}
+
+  <div class="mb-4 prose">{{ content | safe }}</div>
+</article>
+
+<div class="pt-5">
+    <p class="font-headline"><a href="{{ '/' | url }}">← Home</a></p>
+</div>

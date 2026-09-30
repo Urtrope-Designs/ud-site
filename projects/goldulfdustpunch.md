@@ -1,7 +1,6 @@
 ---
 title: Goldulf - Dustpunch!
 description: landing page for the sick dungeon clean-up game!
-layout: layouts/post.njk
 tags:
   - game
   - phaser
