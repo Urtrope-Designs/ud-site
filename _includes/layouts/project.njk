@@ -8,7 +8,13 @@ templateClass: tmpl-post
 
   {% if context %}<p class="text-sm text-accent mb-1">{{ context }}</p>{% endif %}
   <h1 class="font-headline text-4xl mb-2">{{ title }}</h1>
-  {% if summary %}<p class="text-lg mb-6">{{ summary }}</p>{% endif %}
+  {% if summary %}<p class="text-lg mb-4">{{ summary }}</p>{% endif %}
+  {% if role or tools %}
+  <dl class="flex flex-wrap gap-x-8 gap-y-1 mb-6 text-sm">
+    {% if role %}<div><dt class="inline text-secondary">My role:</dt> <dd class="inline">{{ role }}</dd></div>{% endif %}
+    {% if tools %}<div><dt class="inline text-secondary">Built with:</dt> <dd class="inline">{{ tools | join(", ") }}</dd></div>{% endif %}
+  </dl>
+  {% endif %}
 
   <div class="mb-4 prose">{{ content | safe }}</div>
 </article>

@@ -6,6 +6,7 @@ tags:
   - utility
   - capacitor
 summary: Pick the effect you want and get the best Skyrim potion recipes, fast.
+role: Solo – design and development
 tools: [React, Ionic, Capacitor]
 order: 3
 hero:

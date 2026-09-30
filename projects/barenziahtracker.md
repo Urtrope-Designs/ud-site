@@ -6,6 +6,7 @@ tags:
   - utility
   - capacitor
 summary: A native iOS and Android checklist for hunting down all 24 Stones of Barenziah.
+role: Solo – design and development
 tools: [React, Ionic, Capacitor]
 order: 4
 hero:

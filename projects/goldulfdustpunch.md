@@ -5,6 +5,7 @@ tags:
   - game
   - phaser
 summary: A pixel-art dungeon-cleaning brawler for web and mobile.
+role: Solo – design, art, code
 tools: [Phaser 3, TypeScript, Capacitor]
 order: 2
 hero:
@@ -15,7 +16,4 @@ Huff! Puff! Clean up some stuff! As the lone surviving member of the (weirdly) u
 [Download the PWA today](https://dustpunch.urtropedesigns.com) and PUNCH! SOME!! DUST!!!
 
 And watch your local app store for beta versions of native-time-apps sooner or later.
-
-## Tech stuff
-Built using Phaser 3 in Typescript, and Capacitor for the mobile bridge aspect.
 

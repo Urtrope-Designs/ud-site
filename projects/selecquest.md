@@ -4,6 +4,7 @@ description: landing page for the smash hit idle rpg!
 tags: 
   - game
 summary: An idle RPG with three adventuring modes, standing on the shoulders of Progress Quest.
+role: Solo – design and development
 tools: [Stencil, TypeScript, Capacitor]
 order: 5
 hero:

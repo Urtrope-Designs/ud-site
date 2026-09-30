@@ -3,6 +3,7 @@ title: Reusable Table Rows for Ad-Sales Dashboards
 description: How I turned one-off table rows into shared, configurable components for an enterprise ad-sales dashboard.
 context: Professional work · Railroad19
 summary: Turning one-off table rows into shared, configurable components for an enterprise ad-sales dashboard.
+role: Front-end architecture and implementation
 tools: [Angular, TypeScript, Component design]
 order: 1
 hero:
