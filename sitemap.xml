@@ -62,11 +62,6 @@
   </url>
   
   <url>
-    <loc>https://urtropedesigns.com/tags/policy/</loc>
-    <lastmod>2026-09-30</lastmod>
-  </url>
-  
-  <url>
     <loc>https://urtropedesigns.com/tags/react/</loc>
     <lastmod>2026-09-30</lastmod>
   </url>
@@ -88,6 +83,16 @@
   
   <url>
     <loc>https://urtropedesigns.com/tags/phaser/</loc>
+    <lastmod>2026-09-30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://urtropedesigns.com/tags/policy/</loc>
+    <lastmod>2026-09-30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://urtropedesigns.com/work/</loc>
     <lastmod>2026-09-30</lastmod>
   </url>
 </urlset>
