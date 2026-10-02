@@ -1,5 +1,8 @@
 const { DateTime } = require("luxon");
 const fs = require("fs");
+const path = require("path");
+const postcss = require("postcss");
+const postcssConfig = require("./postcss.config.js");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
@@ -36,6 +39,18 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
   eleventyConfig.addCollection("tagList", require("./_11ty/getTagList"));
+
+  // Compile Tailwind/PostCSS before every build (including watch rebuilds),
+  // so new classes in templates show up without a separate CSS watcher.
+  eleventyConfig.addWatchTarget("./tailwind.config.js");
+  eleventyConfig.on("eleventy.before", async () => {
+    const from = "css/index.css";
+    const to = "_site/assets/main.css";
+    const css = await fs.promises.readFile(from, "utf8");
+    const result = await postcss(postcssConfig.plugins).process(css, { from, to });
+    await fs.promises.mkdir(path.dirname(to), { recursive: true });
+    await fs.promises.writeFile(to, result.css);
+  });
 
   eleventyConfig.addPassthroughCopy("media");
   eleventyConfig.addPassthroughCopy("css");

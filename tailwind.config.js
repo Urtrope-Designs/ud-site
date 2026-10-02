@@ -3,8 +3,10 @@ const theme = require('tailwindcss/defaultTheme')
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
-  purge: ['./**/*.njk'],
-  darkMode: false, // or 'media' or 'class'
+  content: [
+    './*.{njk,md,html}',
+    './{_includes,about,feed,projects,work}/**/*.{njk,md,html}',
+  ],
   theme: {
     screens: {
       'tablet': '640px',
@@ -59,12 +61,6 @@ module.exports = {
         }
       }),
     },
-  },
-  variants: {
-    animation: ['motion-safe'],
-    extend:  {
-      textColor: ['visited']
-    }
   },
   plugins: [require('@tailwindcss/typography')],
 }

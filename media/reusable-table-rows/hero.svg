@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Before and after: bespoke table rows vs. one configurable row</title>
+  <desc id="desc">Before: about 13 table-specific row components, each looping over the columns and checking every field name with ngIf, leaving the markup full of "ngIf false" comments. After: each column config gains an optional cellComponentType. One generic ConfigurableRow creates that component for each column and passes in the column config, row data, and any custom data or event handlers the parent table provides. The cells come from a shared set: date, currency, link, status badge, editable notes, formatted text, and plain text as the default.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#00FFCF"/>
+    </marker>
+    <style>
+      .sans { font-family: Raleway, "Segoe UI", "Helvetica Neue", Arial, sans-serif; }
+      .head { font-family: "Montserrat Alternates", Montserrat, "Segoe UI", Arial, sans-serif; font-weight: 600; }
+      .mono { font-family: Consolas, "SF Mono", Menlo, "Courier New", monospace; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="1000" fill="#101929"/>
+
+  <!-- ============ BEFORE ============ -->
+  <text x="60" y="110" class="head" font-size="30" letter-spacing="4" fill="#FF7F5C">BEFORE</text>
+
+  <!-- stacked copies behind the front card -->
+  <rect x="108" y="142" width="520" height="670" rx="14" fill="#1a2b49" stroke="#6397eb" stroke-opacity="0.25" stroke-width="2"/>
+  <rect x="84" y="166" width="520" height="670" rx="14" fill="#1a2b49" stroke="#6397eb" stroke-opacity="0.4" stroke-width="2"/>
+
+  <!-- front card -->
+  <g>
+    <rect x="60" y="190" width="520" height="670" rx="14" fill="#1a2b49" stroke="#6397eb" stroke-opacity="0.7" stroke-width="2"/>
+    <text x="84" y="236" class="sans" font-size="24" fill="#6397eb">OrderRow template</text>
+    <line x1="60" y1="256" x2="580" y2="256" stroke="#6397eb" stroke-opacity="0.35" stroke-width="2"/>
+
+    <g class="mono" font-size="20" fill="#ffffff">
+      <text x="84" y="298">&lt;td *ngFor="let col of cols"&gt;</text>
+      <text x="108" y="332"><tspan fill="#FF7F5C">&lt;span *ngIf="col.field==='date'"&gt;</tspan></text>
+      <text x="108" y="366"><tspan fill="#FF7F5C">&lt;span *ngIf="col.field==='amt'"&gt;</tspan></text>
+      <text x="108" y="400"><tspan fill="#FF7F5C">&lt;span *ngIf="col.field==='status'"&gt;</tspan></text>
+      <text x="108" y="434"><tspan fill="#FF7F5C">&lt;span *ngIf="col.field==='notes'"&gt;</tspan></text>
+      <text x="108" y="468">…</text>
+      <text x="84" y="502">&lt;/td&gt;</text>
+    </g>
+
+    <text x="84" y="556" class="sans" font-size="20" fill="#6397eb">rendered, in every cell:</text>
+    <g class="mono" font-size="20" fill="#6397eb">
+      <text x="84" y="592" fill-opacity="0.85">&lt;!--ngIf false--&gt;</text>
+      <text x="84" y="626" fill-opacity="0.75">&lt;!--ngIf false--&gt;</text>
+      <text x="84" y="660" fill-opacity="0.65">&lt;!--ngIf false--&gt;</text>
+      <text x="84" y="694" fill-opacity="0.55">&lt;!--ngIf false--&gt;</text>
+      <text x="84" y="728" fill-opacity="0.45">&lt;!--ngIf false--&gt;</text>
+      <text x="84" y="762" fill-opacity="0.35">&lt;!--ngIf false--&gt;</text>
+      <text x="84" y="796" fill-opacity="0.25">&lt;!--ngIf false--&gt;</text>
+      <text x="84" y="830" fill-opacity="0.15">&lt;!--ngIf false--&gt;</text>
+    </g>
+  </g>
+
+  <!-- copy-count badge -->
+  <circle cx="606" cy="150" r="46" fill="#FF7F5C"/>
+  <text x="606" y="162" text-anchor="middle" class="head" font-size="34" fill="#101929">×13</text>
+
+  <text x="60" y="930" class="sans" font-size="30" fill="#ffffff">~13 row components, one per table,</text>
+  <text x="60" y="970" class="sans" font-size="30" fill="#ffffff">each re-checking every field</text>
+
+  <!-- divider -->
+  <line x1="690" y1="80" x2="690" y2="960" stroke="#6397eb" stroke-opacity="0.3" stroke-width="2" stroke-dasharray="8 10"/>
+
+  <!-- ============ AFTER ============ -->
+  <text x="740" y="110" class="head" font-size="30" letter-spacing="4" fill="#00FFCF">AFTER</text>
+
+  <!-- column config -->
+  <rect x="740" y="142" width="440" height="236" rx="14" fill="#1a2b49" stroke="#6397eb" stroke-opacity="0.7" stroke-width="2"/>
+  <text x="764" y="182" class="sans" font-size="22" fill="#6397eb">column config</text>
+  <g class="mono" font-size="22" fill="#ffffff">
+    <text x="764" y="222">{ field: 'flightDate',</text>
+    <text x="790" y="256">header: 'Flight date',</text>
+    <text x="790" y="290">width: 120,</text>
+    <text x="790" y="324" fill="#00FFCF">cellComponentType: DateCell</text>
+    <text x="764" y="358">}</text>
+  </g>
+
+  <!-- parent table -->
+  <rect x="1220" y="142" width="320" height="160" rx="14" fill="#1a2b49" stroke="#6397eb" stroke-opacity="0.7" stroke-width="2"/>
+  <text x="1244" y="186" class="sans" font-size="22" fill="#6397eb">parent table</text>
+  <text x="1244" y="230" class="sans" font-size="24" fill="#ffffff">custom data +</text>
+  <text x="1244" y="264" class="sans" font-size="24" fill="#ffffff">event handlers,</text>
+  <text x="1244" y="294" class="sans" font-size="20" fill="#ffffff" fill-opacity="0.7">keyed by field</text>
+
+  <!-- arrows into the row -->
+  <path d="M960,380 L1000,446" fill="none" stroke="#00FFCF" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M1380,304 L1280,446" fill="none" stroke="#00FFCF" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <!-- configurable row -->
+  <rect x="800" y="452" width="680" height="124" rx="14" fill="#1a2b49" stroke="#00FFCF" stroke-width="3"/>
+  <text x="1140" y="505" text-anchor="middle" class="head" font-size="36" fill="#00FFCF">ConfigurableRow</text>
+  <text x="1140" y="548" text-anchor="middle" class="mono" font-size="22" fill="#ffffff">createComponent(col.cellComponentType)</text>
+
+  <!-- arrow to cells -->
+  <path d="M1140,578 L1140,624" fill="none" stroke="#00FFCF" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <!-- shared cell components -->
+  <rect x="740" y="630" width="800" height="232" rx="14" fill="none" stroke="#6397eb" stroke-opacity="0.7" stroke-width="2"/>
+  <text x="764" y="670" class="sans" font-size="22" fill="#6397eb">shared cell components</text>
+
+  <g class="sans" font-size="24" fill="#ffffff" text-anchor="middle">
+    <rect x="764" y="690" width="176" height="64" rx="32" fill="#1a2b49" stroke="#00FFCF" stroke-opacity="0.6" stroke-width="2"/>
+    <text x="852" y="730">Date</text>
+    <rect x="956" y="690" width="176" height="64" rx="32" fill="#1a2b49" stroke="#00FFCF" stroke-opacity="0.6" stroke-width="2"/>
+    <text x="1044" y="730">Currency</text>
+    <rect x="1148" y="690" width="176" height="64" rx="32" fill="#1a2b49" stroke="#00FFCF" stroke-opacity="0.6" stroke-width="2"/>
+    <text x="1236" y="730">Link</text>
+    <rect x="1340" y="690" width="176" height="64" rx="32" fill="#1a2b49" stroke="#00FFCF" stroke-opacity="0.6" stroke-width="2"/>
+    <text x="1428" y="730">Status badge</text>
+
+    <rect x="764" y="774" width="240" height="64" rx="32" fill="#1a2b49" stroke="#00FFCF" stroke-opacity="0.6" stroke-width="2"/>
+    <text x="884" y="814">Editable notes</text>
+    <rect x="1020" y="774" width="240" height="64" rx="32" fill="#1a2b49" stroke="#00FFCF" stroke-opacity="0.6" stroke-width="2"/>
+    <text x="1140" y="814">Formatted text</text>
+    <rect x="1276" y="774" width="240" height="64" rx="32" fill="none" stroke="#6397eb" stroke-width="2" stroke-dasharray="6 6"/>
+    <text x="1396" y="814" fill="#6397eb">Plain text · default</text>
+  </g>
+
+  <text x="740" y="930" class="sans" font-size="30" fill="#ffffff">One generic row for every table;</text>
+  <text x="740" y="970" class="sans" font-size="30" fill="#ffffff">a new table needs only its config</text>
+</svg>
