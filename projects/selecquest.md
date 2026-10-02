@@ -7,10 +7,12 @@ summary: An idle RPG with three adventuring modes, standing on the shoulders of 
 role: Solo – design and development
 tools: [Stencil, TypeScript, Capacitor]
 order: 4
-hero:
+hero: /media/selecquest/hero.png
 heroAlt:
 ---
 Welcome to the home of SelecQuest, with three adventuring modes!
+
+<img alt="Playing SelecQuest" src="/media/selecquest/selecquest_loot.gif" loading="lazy">
 
 Download the [PWA today](https://selecquest.urtropedesigns.com)!
 
