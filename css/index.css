@@ -1,13 +1,16 @@
 :root {
   --ud-background-color: #1a2b49;
   --ud-background-color-dark: #101929;
-  --ud-text-color: #fff;
+  --ud-text-color: #E6ECF5;
+  --ud-text-muted-color: #9FB0C8;
   --ud-accent-color: #FF7F5C;
   --ud-primary-color-light: #00FFFF;
   --ud-primary-color: #00FFCF;
   --ud-primary-color-dark: #3bd1bb;
   --ud-secondary-color: #6397eb;
   --ud-secondary-color-dark: #428CFF;
+  /* Secondary at low opacity, for 1px dividers. */
+  --ud-divider-color: rgb(99 151 235 / 0.25);
 }
 
 @tailwind base;
@@ -15,13 +18,73 @@
 @tailwind utilities;
 
 @layer base {
-  a {
-    @apply text-primary;
+  body {
+    font-size: 1rem;
+    line-height: 1.6;
   }
-  a:visited {
-    @apply text-primary-light;
+  @media (min-width: 1024px) {
+    body {
+      font-size: 1.125rem;
+    }
+  }
+  a {
+    @apply text-accent;
   }
   :focus-visible {
     @apply outline outline-2 outline-offset-2 outline-primary;
   }
+}
+
+@layer components {
+  /* Underline that sweeps in from the left on hover/focus, and stays drawn for the current page. */
+  .link-underline {
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 1px;
+    padding-bottom: 1px;
+  }
+  .link-underline:hover,
+  .link-underline:focus-visible,
+  .link-underline[aria-current="page"],
+  .group:hover .link-underline,
+  .group:focus-visible .link-underline {
+    background-size: 100% 1px;
+  }
+
+  /* Links in body copy keep a faint underline at rest (so they don't rely on color alone)
+     and sweep a solid one over it on hover. */
+  .prose a {
+    text-decoration: none;
+    background-image:
+      linear-gradient(currentColor, currentColor),
+      linear-gradient(color-mix(in srgb, currentColor 40%, transparent), color-mix(in srgb, currentColor 40%, transparent));
+    background-position: 0 100%, 0 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 1px, 100% 1px;
+    padding-bottom: 1px;
+  }
+  .prose a:hover,
+  .prose a:focus-visible {
+    background-size: 100% 1px, 100% 1px;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .link-underline,
+    .prose a {
+      transition: background-size 200ms ease-out;
+    }
+
+    /* Page entrance: fade up, staggered 50ms per item via `--enter-i`. */
+    .enter {
+      animation: enter 500ms ease-out both;
+      animation-delay: calc(var(--enter-i, 0) * 50ms);
+    }
+  }
+}
+
+@keyframes enter {
+  from { opacity: 0; transform: translateY(.5rem); }
+  to { opacity: 1; transform: translateY(0); }
 }

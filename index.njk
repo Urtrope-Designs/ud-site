@@ -1,14 +1,16 @@
 ---
 layout: layouts/home.njk
+staggerEntrance: true
 ---
 
-<section class="mt-4 mb-12">
-  <p class="font-headline font-bold text-4xl">{{ metadata.author.name }}</p>
-  <p class="font-headline text-2xl text-accent mb-4">{{ metadata.role }}</p>
-  <p class="text-lg max-w-prose">{{ metadata.description }}</p>
+<section class="pt-6 pb-16 laptop:pt-12 laptop:pb-28">
+  <p class="font-headline font-bold text-4xl laptop:text-5xl enter" style="--enter-i: 2">{{ metadata.author.name }}</p>
+  <p class="font-headline text-2xl text-secondary mt-2 mb-6 enter" style="--enter-i: 3">{{ metadata.role }}</p>
+  <p class="text-lg laptop:text-xl max-w-prose enter" style="--enter-i: 4">{{ metadata.description }}</p>
 </section>
 
-<h1 class="font-headline font-bold text-4xl mb-4">Selected work</h1>
+<h1 class="font-headline font-bold text-3xl laptop:text-4xl mb-8 enter" style="--enter-i: 5">Selected work</h1>
 
 {% set projectslist = collections.projects | sortByOrder | head(4) %}
+{% set enterOffset = 6 %}
 {% include "projectslist.njk" %}
