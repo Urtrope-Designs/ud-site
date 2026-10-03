@@ -1,5 +1,3 @@
-const tailwindcss = require('tailwindcss')
-const theme = require('tailwindcss/defaultTheme')
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
@@ -19,6 +17,8 @@ module.exports = {
         dark: 'var(--ud-background-color-dark)',
       },
       text: 'var(--ud-text-color)',
+      muted: 'var(--ud-text-muted-color)',
+      divider: 'var(--ud-divider-color)',
       accent: 'var(--ud-accent-color)',
       primary: {
         light: 'var(--ud-primary-color-light)',
@@ -32,31 +32,35 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        'sans': ['Raleway', ...defaultTheme.fontFamily.sans],
-        'headline': ['"Montserrat Alternates"', ...defaultTheme.fontFamily.sans]
-      },
-      animation: {
-        'fade-in': '600ms ease-in forwards fade-in'
-      },
-      keyframes: {
-        'fade-in': {
-          '0%': { opacity: 0, transform: 'translateY(.5rem)' },
-          '100%': { opacity: 1, transform: 'translateY(0)' }
-        }
+        'sans': ['Inter', ...defaultTheme.fontFamily.sans],
+        'headline': ['"Space Grotesk"', ...defaultTheme.fontFamily.sans]
       },
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            color: theme('colors.text'),
-            h2: {
-              color: theme('colors.text')
+            // The plugin's defaults are dark grays meant for light backgrounds;
+            // point them all at the site palette. `colors.primary` is an object
+            // (light/DEFAULT/dark), so reference `.DEFAULT` explicitly.
+            // Size and leading inherit from <body> (16px, 18px on laptop+, at 1.6).
+            fontSize: '1em',
+            lineHeight: '1.6',
+            '--tw-prose-body': theme('colors.text'),
+            '--tw-prose-headings': theme('colors.text'),
+            '--tw-prose-lead': theme('colors.text'),
+            '--tw-prose-links': theme('colors.accent'),
+            '--tw-prose-bold': theme('colors.text'),
+            '--tw-prose-counters': theme('colors.secondary.DEFAULT'),
+            '--tw-prose-bullets': theme('colors.secondary.DEFAULT'),
+            '--tw-prose-hr': theme('colors.secondary.DEFAULT'),
+            '--tw-prose-quotes': theme('colors.text'),
+            '--tw-prose-quote-borders': theme('colors.secondary.DEFAULT'),
+            '--tw-prose-captions': theme('colors.muted'),
+            '--tw-prose-code': theme('colors.text'),
+            '--tw-prose-th-borders': theme('colors.secondary.DEFAULT'),
+            '--tw-prose-td-borders': theme('colors.secondary.DEFAULT'),
+            'h1, h2, h3, h4': {
+              fontFamily: theme('fontFamily.headline').join(', '),
             },
-            a: {
-              color: theme('colors.primary'),
-              '&:visited': {
-                color: theme('colors.primary.light')
-              }
-            }
           }
         }
       }),

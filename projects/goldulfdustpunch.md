@@ -8,12 +8,13 @@ summary: A pixel-art dungeon-cleaning brawler for web and mobile.
 role: Solo – design, art, code
 tools: [Phaser 3, TypeScript, Capacitor]
 order: 3
-hero: /media/dustpunch/hero.png
+hero: /media/dustpunch/hero.webp
+ogImage: /media/dustpunch/hero.png
 heroAlt:
 ---
 Huff! Puff! Clean up some stuff! As the lone surviving member of the (weirdly) unnamed clan that beat back the spectre of that ultimate evil - Goldulf! - in ages past, it is now your duty to tidy up a bit and release the souls of your forbears, which are basically just stuck there because there's so much junk everywhere. Armed with the only tool you'll need (I'm talking pixel-perfect fists), punch your way through endless Intellivision-looking dungeons in this, uh, game. 
 
-<img alt="Punching some dust" src="/media/dustpunch/punchin_dust.gif" loading="lazy">
+<img alt="Punching some dust" src="/media/dustpunch/punchin_dust.webp" width="1089" height="768" loading="lazy">
 
 [Download the PWA today](https://dustpunch.urtropedesigns.com) and PUNCH! SOME!! DUST!!!
 

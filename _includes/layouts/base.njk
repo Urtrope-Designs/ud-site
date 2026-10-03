@@ -1,33 +1,73 @@
 <!doctype html>
 <html lang="en">
   <head>
+    {%- set pageTitle = renderData.title or title -%}
+    {%- set fullTitle = (pageTitle + " – " + metadata.title) if pageTitle else (metadata.title + " – " + metadata.role) -%}
+    {%- set pageDescription = renderData.description or summary or description or metadata.description -%}
+    {%- set pageUrl = page.url | url | absoluteUrl(metadata.url) -%}
+    {#- Use a page's own og:image, then its hero if it's a raster image, then the branded default. -#}
+    {%- if ogImage -%}
+      {%- set pageImage = ogImage -%}
+    {%- elif hero is string and (hero.endsWith('.png') or hero.endsWith('.jpg')) -%}
+      {%- set pageImage = hero -%}
+    {%- else -%}
+      {%- set pageImage = "/media/og-default.png" -%}
+    {%- endif -%}
+    {%- set pageImageUrl = pageImage | url | absoluteUrl(metadata.url) %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ renderData.title or title or metadata.title }}</title>
-    <meta name="Description" content="{{ renderData.description or description or metadata.description }}">
+    <title>{{ fullTitle }}</title>
+    <meta name="description" content="{{ pageDescription }}">
+    <link rel="canonical" href="{{ pageUrl }}">
+    <link rel="icon" href="{{ '/favicon.svg' | url }}" type="image/svg+xml">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="{{ metadata.title }}">
+    <meta property="og:title" content="{{ fullTitle }}">
+    <meta property="og:description" content="{{ pageDescription }}">
+    <meta property="og:url" content="{{ pageUrl }}">
+    <meta property="og:image" content="{{ pageImageUrl }}">
+    {%- if pageImage == "/media/og-default.png" %}
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    {%- endif %}
+    <meta property="og:image:alt" content="{{ heroAlt if (pageImage == hero and heroAlt) else fullTitle }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ fullTitle }}">
+    <meta name="twitter:description" content="{{ pageDescription }}">
+    <meta name="twitter:image" content="{{ pageImageUrl }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap">
     <link rel="stylesheet" href="{{ '/assets/main.css' | url }}">
+    {%- if hasCode %}
     <link rel="stylesheet" href="{{ '/css/prism-base16-monokai.dark.css' | url }}">
+    {%- endif %}
     <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
-    <style>@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates&family=Raleway&display=block');</style>
   </head>
-  <body class="font-sans bg-bg text-text min-h-screen flex flex-col">
-    <header class="sticky top-0 z-10 bg-bg flex flex-wrap justify-start border-b border-secondary border-dashed">
-      <h1 class="font-headline font-bold m-4 animate-fade-in"><a href="{{ '/' | url }}" class="hover:underline">{{ metadata.title }}</a></h1>
-      <ul class="font-headline m-4 animate-fade-in">
-        {%- for item in nav -%}
-        <li class="inline-block mr-4{% if item.url == page.url %} underline font-bold{% endif %}"><a href="{{ item.url | url }}" class="hover:underline">{{ item.title }}</a></li>
-        {%- endfor -%}
-      </ul>
+  <body class="font-sans bg-bg-dark text-text min-h-screen flex flex-col">
+    <header class="sticky top-0 z-10 bg-bg-dark border-b border-divider">
+      <div class="max-w-[1100px] mx-auto px-4 tablet:px-6 py-4 flex flex-wrap items-baseline justify-between gap-x-8 gap-y-2">
+        <p class="font-headline font-bold text-lg enter"><a href="{{ '/' | url }}" class="link-underline text-text">{{ metadata.title }}</a></p>
+        <ul class="font-headline flex gap-6 enter" style="--enter-i: 1">
+          {%- for item in nav %}
+          <li><a href="{{ item.url | url }}" class="link-underline {{ 'text-accent' if item.url == page.url else 'text-text hover:text-accent' }}"{% if item.url == page.url %} aria-current="page"{% endif %}>{{ item.title }}</a></li>
+          {%- endfor %}
+        </ul>
+      </div>
     </header>
 
-    <main class="flex-grow {% if templateClass %}{{ templateClass }} px-4 py-6 animate-fade-in{% endif %}">
-
+    {#- Pages that set `staggerEntrance` mark their own items with `.enter`; others fade in as one block. #}
+    <main class="flex-grow w-full max-w-[1100px] mx-auto px-4 tablet:px-6 pt-10 laptop:pt-16 {{ templateClass }}{% if not staggerEntrance %} enter{% endif %}"{% if not staggerEntrance %} style="--enter-i: 2"{% endif %}>
       {{ content | safe }}
     </main>
 
-    <footer class="mt-8 px-4 py-6 border-t border-secondary border-dashed">
-      {% include "contactlinks.njk" %}
-      <p class="mt-4 text-sm">© {% year %} {{ metadata.author.name }}</p>
+    <footer class="mt-16 laptop:mt-32 border-t border-divider">
+      <div class="max-w-[1100px] mx-auto px-4 tablet:px-6 py-8">
+        {% include "contactlinks.njk" %}
+        <p class="mt-4 text-sm text-muted">© {% year %} {{ metadata.author.name }}</p>
+      </div>
     </footer>
 
     <!-- Current page: {{ page.url | url }} -->

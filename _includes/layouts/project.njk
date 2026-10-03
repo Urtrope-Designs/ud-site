@@ -3,22 +3,20 @@ layout: layouts/base.njk
 templateClass: tmpl-post
 ---
 {% from "projectmedia.njk" import projectMedia %}
-<article class="max-w-3xl mx-auto">
-  <div class="mb-6">{{ projectMedia(hero, heroAlt, title) }}</div>
+<article class="max-w-[720px] mx-auto">
+  <div class="mb-8">{{ projectMedia(hero, heroAlt, title, sizes="(min-width: 768px) 720px, (min-width: 640px) calc(100vw - 3rem), calc(100vw - 2rem)", eager=true) }}</div>
 
-  {% if context %}<p class="text-sm text-accent mb-1">{{ context }}</p>{% endif %}
-  <h1 class="font-headline text-4xl mb-2">{{ title }}</h1>
-  {% if summary %}<p class="text-lg mb-4">{{ summary }}</p>{% endif %}
+  {% if context %}<p class="text-sm text-muted mb-1">{{ context }}</p>{% endif %}
+  <h1 class="font-headline font-bold text-4xl mb-3">{{ title }}</h1>
+  {% if summary %}<p class="text-lg laptop:text-xl mb-4">{{ summary }}</p>{% endif %}
   {% if role or tools %}
-  <dl class="flex flex-wrap gap-x-8 gap-y-1 mb-6 text-sm">
+  <dl class="flex flex-wrap gap-x-8 gap-y-1 mb-8 text-sm">
     {% if role %}<div><dt class="inline text-secondary">My role:</dt> <dd class="inline">{{ role }}</dd></div>{% endif %}
     {% if tools %}<div><dt class="inline text-secondary">Built with:</dt> <dd class="inline">{{ tools | join(", ") }}</dd></div>{% endif %}
   </dl>
   {% endif %}
 
-  <div class="mb-4 prose">{{ content | safe }}</div>
-</article>
+  <div class="prose">{{ content | safe }}</div>
 
-<div class="pt-5">
-    <p class="font-headline"><a href="{{ '/' | url }}">← Home</a></p>
-</div>
+  <p class="font-headline mt-16"><a href="{{ '/' | url }}" class="link-underline">← Home</a></p>
+</article>
