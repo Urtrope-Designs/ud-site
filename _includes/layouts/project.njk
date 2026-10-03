@@ -3,7 +3,7 @@ layout: layouts/base.njk
 templateClass: tmpl-post
 ---
 {% from "projectmedia.njk" import projectMedia %}
-<article class="max-w-3xl">
+<article class="max-w-3xl mx-auto">
   <div class="mb-6">{{ projectMedia(hero, heroAlt, title) }}</div>
 
   {% if context %}<p class="text-sm text-accent mb-1">{{ context }}</p>{% endif %}
