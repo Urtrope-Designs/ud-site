@@ -9,7 +9,8 @@ summary: A native iOS and Android checklist for hunting down all 24 Stones of Ba
 role: Solo – design and development
 tools: [React, Ionic, Capacitor]
 order: 2
-hero: /media/barenziahtracker/barenziah-feature.png
+hero: /media/barenziahtracker/barenziah-feature.webp
+ogImage: /media/barenziahtracker/barenziah-feature.png
 heroAlt:
 ---
 Trying to pwn Skyrim by tracking down all the Stones of Barenziah, but can't remember which ones you've gotten already or where to look for the rest? Then you've come to the fortuitest place!
@@ -18,7 +19,10 @@ This app will help you hunt down all 24 Stones in the "Unusual Gem" / "No Stone 
 
 As each stone is obtained, simply swipe it left to mark it as found:
 
-<img alt="Swipe a stone to mark it complete." src="/media/barenziahtracker/stone-swipe.gif" loading="lazy">
+<video autoplay muted loop playsinline aria-label="Swipe a stone to mark it complete.">
+  <source src="/media/barenziahtracker/stone-swipe.webm" type="video/webm">
+  <source src="/media/barenziahtracker/stone-swipe.mp4" type="video/mp4">
+</video>
 
 Go whole hog with these native apps and track down all the stones in no time!
 <div>

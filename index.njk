@@ -8,7 +8,7 @@ layout: layouts/home.njk
   <p class="text-lg max-w-prose">{{ metadata.description }}</p>
 </section>
 
-<h1 class="font-headline font-bold text-4xl mb-4">Highlights</h1>
+<h1 class="font-headline font-bold text-4xl mb-4">Selected work</h1>
 
 {% set projectslist = collections.projects | sortByOrder | head(4) %}
 {% include "projectslist.njk" %}

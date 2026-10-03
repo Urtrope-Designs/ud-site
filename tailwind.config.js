@@ -47,12 +47,24 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            color: theme('colors.text'),
-            h2: {
-              color: theme('colors.text')
-            },
+            // The plugin's defaults are dark grays meant for light backgrounds;
+            // point them all at the site palette. `colors.primary` is an object
+            // (light/DEFAULT/dark), so reference `.DEFAULT` explicitly.
+            '--tw-prose-body': theme('colors.text'),
+            '--tw-prose-headings': theme('colors.text'),
+            '--tw-prose-lead': theme('colors.text'),
+            '--tw-prose-links': theme('colors.primary.DEFAULT'),
+            '--tw-prose-bold': theme('colors.text'),
+            '--tw-prose-counters': theme('colors.secondary.DEFAULT'),
+            '--tw-prose-bullets': theme('colors.secondary.DEFAULT'),
+            '--tw-prose-hr': theme('colors.secondary.DEFAULT'),
+            '--tw-prose-quotes': theme('colors.text'),
+            '--tw-prose-quote-borders': theme('colors.secondary.DEFAULT'),
+            '--tw-prose-captions': theme('colors.secondary.DEFAULT'),
+            '--tw-prose-code': theme('colors.text'),
+            '--tw-prose-th-borders': theme('colors.secondary.DEFAULT'),
+            '--tw-prose-td-borders': theme('colors.secondary.DEFAULT'),
             a: {
-              color: theme('colors.primary'),
               '&:visited': {
                 color: theme('colors.primary.light')
               }

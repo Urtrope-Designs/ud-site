@@ -55,6 +55,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("media");
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("resume.pdf");
+  eleventyConfig.addPassthroughCopy("favicon.svg");
 
   /* Markdown Plugins */
   let markdownIt = require("markdown-it");
