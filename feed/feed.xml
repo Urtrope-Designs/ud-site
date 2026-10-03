@@ -4,7 +4,7 @@
 	<subtitle>I build technology for humans.</subtitle>
 	<link href="https://myurl.com/feed/feed.xml" rel="self"/>
 	<link href="https://urtropedesigns.com/"/>
-	<updated>2026-10-03T03:36:04Z</updated>
+	<updated>2026-10-03T05:04:43Z</updated>
 	<id>https://myurl.com/</id>
 	<author>
 		<name>Sean Cunningham</name>
@@ -14,16 +14,19 @@
 	<entry>
 		<title>Barenziah Tracker</title>
 		<link href="https://urtropedesigns.com/projects/barenziahtracker/"/>
-		<updated>2026-10-03T03:36:04Z</updated>
+		<updated>2026-10-03T05:04:43Z</updated>
 		<id>https://urtropedesigns.com/projects/barenziahtracker/</id>
 		<content type="html">&lt;p&gt;Trying to pwn Skyrim by tracking down all the Stones of Barenziah, but can&#39;t remember which ones you&#39;ve gotten already or where to look for the rest? Then you&#39;ve come to the fortuitest place!&lt;/p&gt;
 &lt;p&gt;This app will help you hunt down all 24 Stones in the &amp;quot;Unusual Gem&amp;quot; / &amp;quot;No Stone Unturned&amp;quot; questline: simply tap any stone in the list to see the location on the map as well as a screenshot of the stone within the location.&lt;/p&gt;
 &lt;p&gt;As each stone is obtained, simply swipe it left to mark it as found:&lt;/p&gt;
-&lt;img alt=&quot;Swipe a stone to mark it complete.&quot; src=&quot;https://urtropedesigns.com/media/barenziahtracker/stone-swipe.gif&quot; loading=&quot;lazy&quot; /&gt;
+&lt;video width=&quot;334&quot; height=&quot;156&quot; autoplay=&quot;&quot; muted=&quot;&quot; loop=&quot;&quot; playsinline=&quot;&quot; aria-label=&quot;Swipe a stone to mark it complete.&quot;&gt;
+  &lt;source src=&quot;https://urtropedesigns.com/media/barenziahtracker/stone-swipe.webm&quot; type=&quot;video/webm&quot; /&gt;
+  &lt;source src=&quot;https://urtropedesigns.com/media/barenziahtracker/stone-swipe.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+&lt;/video&gt;
 &lt;p&gt;Go whole hog with these native apps and track down all the stones in no time!&lt;/p&gt;
 &lt;div&gt;
-&lt;a href=&quot;https://apps.apple.com/us/app/barenziah-tracker/id1585514338?itsct=apps_box_badge&amp;amp;itscg=30200&quot; style=&quot;overflow: hidden; border-radius: 13px; width: 250px; height: 83px;&quot;&gt;&lt;img src=&quot;https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;amp;releaseDate=1631750400&amp;h=c37338d49b71f7793fee267a0d9cc70c&quot; alt=&quot;Download on the App Store&quot; style=&quot;border-radius: 13px; width: calc(200rem / 16); margin: 0; display: inline&quot; /&gt;&lt;/a&gt;
-&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.urtropedesigns.barenziahtracker&amp;pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1&quot;&gt;&lt;img alt=&quot;Get it on Google Play&quot; src=&quot;https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png&quot; style=&quot;width: calc(240rem / 16); margin: 0; display: inline;&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;https://apps.apple.com/us/app/barenziah-tracker/id1585514338?itsct=apps_box_badge&amp;amp;itscg=30200&quot; style=&quot;overflow: hidden; border-radius: 13px; width: 250px; height: 83px;&quot;&gt;&lt;img width=&quot;250&quot; height=&quot;83&quot; src=&quot;https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;amp;releaseDate=1631750400&amp;h=c37338d49b71f7793fee267a0d9cc70c&quot; alt=&quot;Download on the App Store&quot; style=&quot;border-radius: 13px; width: calc(200rem / 16); margin: 0; display: inline&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.urtropedesigns.barenziahtracker&amp;pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1&quot;&gt;&lt;img width=&quot;646&quot; height=&quot;250&quot; alt=&quot;Get it on Google Play&quot; src=&quot;https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png&quot; style=&quot;width: calc(240rem / 16); margin: 0; display: inline;&quot; /&gt;&lt;/a&gt;
 &lt;/div&gt;
 &lt;p&gt;Or &lt;a href=&quot;https://barenziahtracker.urtropedesigns.com/&quot;&gt;download the PWA today&lt;/a&gt; if that&#39;s more your speed.&lt;/p&gt;
 &lt;h2&gt;Some legal stuff&lt;/h2&gt;
@@ -35,10 +38,10 @@
 	<entry>
 		<title>Goldulf - Dustpunch!</title>
 		<link href="https://urtropedesigns.com/projects/goldulfdustpunch/"/>
-		<updated>2026-10-03T03:36:04Z</updated>
+		<updated>2026-10-03T05:04:43Z</updated>
 		<id>https://urtropedesigns.com/projects/goldulfdustpunch/</id>
 		<content type="html">&lt;p&gt;Huff! Puff! Clean up some stuff! As the lone surviving member of the (weirdly) unnamed clan that beat back the spectre of that ultimate evil - Goldulf! - in ages past, it is now your duty to tidy up a bit and release the souls of your forbears, which are basically just stuck there because there&#39;s so much junk everywhere. Armed with the only tool you&#39;ll need (I&#39;m talking pixel-perfect fists), punch your way through endless Intellivision-looking dungeons in this, uh, game.&lt;/p&gt;
-&lt;img alt=&quot;Punching some dust&quot; src=&quot;https://urtropedesigns.com/media/dustpunch/punchin_dust.gif&quot; loading=&quot;lazy&quot; /&gt;
+&lt;img alt=&quot;Punching some dust&quot; src=&quot;https://urtropedesigns.com/media/dustpunch/punchin_dust.webp&quot; width=&quot;1089&quot; height=&quot;768&quot; loading=&quot;lazy&quot; /&gt;
 &lt;p&gt;&lt;a href=&quot;https://dustpunch.urtropedesigns.com/&quot;&gt;Download the PWA today&lt;/a&gt; and PUNCH! SOME!! DUST!!!&lt;/p&gt;
 &lt;p&gt;And watch your local app store for beta versions of native-time-apps sooner or later.&lt;/p&gt;
 </content>
@@ -47,7 +50,7 @@
 	<entry>
 		<title>Skyrim Potion Companion</title>
 		<link href="https://urtropedesigns.com/projects/potioncompanion/"/>
-		<updated>2026-10-03T03:36:04Z</updated>
+		<updated>2026-10-03T05:04:43Z</updated>
 		<id>https://urtropedesigns.com/projects/potioncompanion/</id>
 		<content type="html">&lt;h2&gt;Brew the most potent potions; now with 50% more ease!&lt;/h2&gt;
 &lt;ul&gt;
@@ -70,7 +73,7 @@
 	<entry>
 		<title>Reusable Table Rows for Ad-Sales Dashboards</title>
 		<link href="https://urtropedesigns.com/projects/reusable-table-rows/"/>
-		<updated>2026-10-03T03:36:04Z</updated>
+		<updated>2026-10-03T05:04:43Z</updated>
 		<id>https://urtropedesigns.com/projects/reusable-table-rows/</id>
 		<content type="html">&lt;!-- DRAFT copy – check details before publishing. NDA-safe: no real screens, client or data. --&gt;
 &lt;h2&gt;The problem&lt;/h2&gt;
@@ -87,10 +90,13 @@
 	<entry>
 		<title>SelecQuest</title>
 		<link href="https://urtropedesigns.com/projects/selecquest/"/>
-		<updated>2026-10-03T03:36:04Z</updated>
+		<updated>2026-10-03T05:04:43Z</updated>
 		<id>https://urtropedesigns.com/projects/selecquest/</id>
 		<content type="html">&lt;p&gt;Welcome to the home of SelecQuest, with three adventuring modes!&lt;/p&gt;
-&lt;img alt=&quot;Playing SelecQuest&quot; src=&quot;https://urtropedesigns.com/media/selecquest/selecquest_loot.gif&quot; loading=&quot;lazy&quot; /&gt;
+&lt;video width=&quot;886&quot; height=&quot;834&quot; autoplay=&quot;&quot; muted=&quot;&quot; loop=&quot;&quot; playsinline=&quot;&quot; aria-label=&quot;Playing SelecQuest&quot;&gt;
+  &lt;source src=&quot;https://urtropedesigns.com/media/selecquest/selecquest_loot.webm&quot; type=&quot;video/webm&quot; /&gt;
+  &lt;source src=&quot;https://urtropedesigns.com/media/selecquest/selecquest_loot.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+&lt;/video&gt;
 &lt;p&gt;Download the &lt;a href=&quot;https://selecquest.urtropedesigns.com/&quot;&gt;PWA today&lt;/a&gt;!&lt;/p&gt;
 &lt;p&gt;And thanks a bunch to &lt;a href=&quot;http://progressquest.com/&quot;&gt;Progress Quest&lt;/a&gt; for letting me stand (waveringly) on the shoulders of an industry giant.&lt;/p&gt;
 &lt;h2&gt;Some legal stuff&lt;/h2&gt;
