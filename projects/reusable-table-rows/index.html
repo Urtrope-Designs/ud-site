@@ -19,12 +19,10 @@
     <main class="flex-grow tmpl-post px-4 py-6 animate-fade-in">
 
       
-<article class="max-w-3xl">
+<article class="max-w-3xl mx-auto">
   <div class="mb-6">
 <div class="aspect-[16/10] overflow-hidden rounded-md bg-bg-dark">
-  <div class="w-full h-full flex items-center justify-center p-4 border border-dashed border-secondary rounded-md text-secondary text-sm text-center" role="img" aria-label="Reusable Table Rows for Ad-Sales Dashboards – media coming soon">
-    Reusable Table Rows for Ad-Sales Dashboards<br>media coming soon
-  </div>
+  <img class="w-full h-full object-cover" src="/media/reusable-table-rows/hero.svg" alt="Before and after diagram. Before: about 13 table-specific row components, each checking every column&#39;s field name with ngIf. After: each column config names a cell component, and one generic ConfigurableRow creates it from a shared set: date, currency, link, status badge, editable notes, formatted text, or plain text by default." loading="lazy">
 </div>
 </div>
 
@@ -41,11 +39,12 @@
   <div class="mb-4 prose"><!-- DRAFT copy – check details before publishing. NDA-safe: no real screens, client or data. -->
 <h2>The problem</h2>
 <p>At Railroad19 I built dashboard interfaces for a major media company's ad-sales teams, turning complex order data into clear visualizations. Those dashboards helped teams spot and act on $6.6M in mismarked orders – and a lot of that work happens in tables.</p>
-<p>As the app grew, each new table type picked up its own row component. The rows became unwieldy: the same display logic, copied with small variations, and every new table meant solving the same problems again.</p>
+<p>Each table was already driven by a column config – header label, field, default width, default visibility – so users could show, hide, reorder and resize columns. But every table type also had its own row component, about 13 of them by the time we changed course. Each row template looped over the columns and checked the field name with a chain of <code>*ngIf</code>s to decide how to format each cell. The same display logic was copied with small variations from table to table, and the rendered markup was littered with <code>&lt;!--ngIf false--&gt;</code> comments for every check that didn't match, in every cell.</p>
 <h2>What I did</h2>
-<p>I redesigned the rows as dynamic, reusable components that could be selected dynamically via JSON config. The display logic lives in one place, with the ability to pass in custom logic where needed, so other engineers can build a new table type on top of the same foundation.</p>
+<p>I replaced the per-table rows with one generic configurable row. The column config gained a single optional field: the cell component to render. The row hands that component to Angular's <code>ViewContainerRef.createComponent</code>, then passes in the column config and row data. If a column names no component, its value shows as plain text.</p>
+<p>The cells come from a shared set: dates, currency, links, several kinds of status badges, editable notes and formatted text. When a table needs something specific, its parent component passes custom data and event handlers into the row, keyed by field, and the row wires them to the matching cells. The display logic lives in one place, and other engineers can build a new table type on top of the same foundation.</p>
 <h2>The result</h2>
-<p>The approach became a pattern other engineers on the team adopted, and new tables no longer needed to duplicate display logic for common cell types.</p>
+<p>The approach became a pattern other engineers on the team adopted. We added another 8–10 table types after the switch, and none of them needed a new row component – new tables no longer duplicated display logic for common cell types.</p>
 </div>
 </article>
 

@@ -950,6 +950,9 @@ video {
   white-space: nowrap;
   border-width: 0;
 }
+.static {
+  position: static;
+}
 .sticky {
   position: sticky;
 }
@@ -961,6 +964,10 @@ video {
 }
 .m-4 {
   margin: 1rem;
+}
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
 }
 .mb-1 {
   margin-bottom: 0.25rem;
@@ -1016,6 +1023,9 @@ video {
 .grid {
   display: grid;
 }
+.hidden {
+  display: none;
+}
 .aspect-\[16\/10\] {
   aspect-ratio: 16/10;
 }
@@ -1060,6 +1070,9 @@ video {
 }
 .animate-fade-in {
   animation: 600ms ease-in forwards fade-in;
+}
+.resize {
+  resize: both;
 }
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -1285,4 +1298,3 @@ video {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
-
