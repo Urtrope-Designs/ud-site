@@ -3,7 +3,7 @@
 {% for project in projectslist %}
   <li>
     <a href="{{ project.url | url }}" class="group block h-full p-4 rounded-lg bg-bg-dark text-text visited:text-text motion-safe:transition-transform motion-safe:duration-200 hover:-translate-y-1 focus-visible:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
-      {{ projectMedia(project.data.hero, project.data.heroAlt, project.data.title, true) }}
+      {{ projectMedia(project.data.hero, project.data.heroAlt, project.data.title, true, sizes="(min-width: 1132px) 502px, (min-width: 640px) calc(50vw - 4rem), calc(100vw - 4rem)") }}
       {% if project.data.context %}<p class="text-sm text-accent mt-4">{{ project.data.context }}</p>{% endif %}
       <h2 class="font-headline font-bold text-xl {{ 'mt-1' if project.data.context else 'mt-4' }} group-hover:underline">{{ project.data.title }}</h2>
       {% if project.data.summary %}<p class="mt-1">{{ project.data.summary }}</p>{% endif %}

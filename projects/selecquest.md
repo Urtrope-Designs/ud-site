@@ -13,7 +13,7 @@ heroAlt:
 ---
 Welcome to the home of SelecQuest, with three adventuring modes!
 
-<video autoplay muted loop playsinline aria-label="Playing SelecQuest">
+<video width="886" height="834" autoplay muted loop playsinline aria-label="Playing SelecQuest">
   <source src="/media/selecquest/selecquest_loot.webm" type="video/webm">
   <source src="/media/selecquest/selecquest_loot.mp4" type="video/mp4">
 </video>

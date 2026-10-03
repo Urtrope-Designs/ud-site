@@ -36,7 +36,27 @@ module.exports = function(eleventyConfig) {
     return [...array].sort((a, b) => (a.data.order ?? Infinity) - (b.data.order ?? Infinity));
   });
 
-  eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
+  // Build a srcset from width variants saved next to an image as `<name>-<width>w.<ext>`
+  // (e.g. hero-640w.webp, hero-1280w.webp). Returns "" when there are none.
+  eleventyConfig.addFilter("srcset", (src) => {
+    if (typeof src !== "string") return "";
+    const { dir, name, ext } = path.parse(src);
+    const pattern = new RegExp(`^${name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}-(\\d+)w${ext.replace(".", "\\.")}$`);
+    let files;
+    try {
+      files = fs.readdirSync(path.join(".", dir));
+    } catch {
+      return "";
+    }
+    return files
+      .map((file) => [file, pattern.exec(file)])
+      .filter(([, match]) => match)
+      .sort(([, a], [, b]) => a[1] - b[1])
+      .map(([file, match]) => `${path.posix.join(dir, file)} ${match[1]}w`)
+      .join(", ");
+  });
+
+  eleventyConfig.addShortcode("year",() => `${new Date().getFullYear()}`);
 
   eleventyConfig.addCollection("tagList", require("./_11ty/getTagList"));
 

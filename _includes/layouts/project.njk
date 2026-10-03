@@ -4,7 +4,7 @@ templateClass: tmpl-post
 ---
 {% from "projectmedia.njk" import projectMedia %}
 <article class="max-w-3xl mx-auto">
-  <div class="mb-6">{{ projectMedia(hero, heroAlt, title) }}</div>
+  <div class="mb-6">{{ projectMedia(hero, heroAlt, title, sizes="(min-width: 800px) 768px, calc(100vw - 2rem)", eager=true) }}</div>
 
   {% if context %}<p class="text-sm text-accent mb-1">{{ context }}</p>{% endif %}
   <h1 class="font-headline text-4xl mb-2">{{ title }}</h1>

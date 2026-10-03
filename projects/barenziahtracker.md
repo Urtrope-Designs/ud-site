@@ -19,15 +19,15 @@ This app will help you hunt down all 24 Stones in the "Unusual Gem" / "No Stone 
 
 As each stone is obtained, simply swipe it left to mark it as found:
 
-<video autoplay muted loop playsinline aria-label="Swipe a stone to mark it complete.">
+<video width="334" height="156" autoplay muted loop playsinline aria-label="Swipe a stone to mark it complete.">
   <source src="/media/barenziahtracker/stone-swipe.webm" type="video/webm">
   <source src="/media/barenziahtracker/stone-swipe.mp4" type="video/mp4">
 </video>
 
 Go whole hog with these native apps and track down all the stones in no time!
 <div>
-<a href="https://apps.apple.com/us/app/barenziah-tracker/id1585514338?itsct=apps_box_badge&amp;itscg=30200" style="overflow: hidden; border-radius: 13px; width: 250px; height: 83px;"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1631750400&h=c37338d49b71f7793fee267a0d9cc70c" alt="Download on the App Store" style="border-radius: 13px; width: calc(200rem / 16); margin: 0; display: inline"></a>
-<a href='https://play.google.com/store/apps/details?id=com.urtropedesigns.barenziahtracker&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png' style="width: calc(240rem / 16); margin: 0; display: inline;"/></a>
+<a href="https://apps.apple.com/us/app/barenziah-tracker/id1585514338?itsct=apps_box_badge&amp;itscg=30200" style="overflow: hidden; border-radius: 13px; width: 250px; height: 83px;"><img width="250" height="83" src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1631750400&h=c37338d49b71f7793fee267a0d9cc70c" alt="Download on the App Store" style="border-radius: 13px; width: calc(200rem / 16); margin: 0; display: inline"></a>
+<a href='https://play.google.com/store/apps/details?id=com.urtropedesigns.barenziahtracker&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img width="646" height="250" alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png' style="width: calc(240rem / 16); margin: 0; display: inline;"/></a>
 </div>
 
 Or [download the PWA today](https://barenziahtracker.urtropedesigns.com) if that's more your speed.
