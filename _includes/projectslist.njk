@@ -4,7 +4,7 @@
 {% for project in projectslist %}
   <li class="enter" style="--enter-i: {{ (enterOffset or 0) + loop.index0 }}">
     <a href="{{ project.url | url }}" class="group block h-full p-4 rounded-lg bg-bg text-text visited:text-text motion-safe:transition-transform motion-safe:duration-200 motion-safe:hover:-translate-y-1 motion-safe:focus-visible:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
-      {{ projectMedia(project.data.hero, project.data.heroAlt, project.data.title, true, sizes="(min-width: 1100px) 478px, (min-width: 640px) calc(50vw - 4.5rem), calc(100vw - 4rem)") }}
+      {{ projectMedia(project.data.hero, project.data.heroAlt, project.data.title, true, sizes="(min-width: 1100px) 478px, (min-width: 640px) calc(50vw - 4.5rem), calc(100vw - 4rem)", still=project.data.heroStill) }}
       {% if project.data.context %}<p class="text-sm text-muted mt-4">{{ project.data.context }}</p>{% endif %}
       <h2 class="font-headline font-bold text-xl {{ 'mt-1' if project.data.context else 'mt-4' }}"><span class="link-underline">{{ project.data.title }}</span></h2>
       {% if project.data.summary %}<p class="mt-1">{{ project.data.summary }}</p>{% endif %}

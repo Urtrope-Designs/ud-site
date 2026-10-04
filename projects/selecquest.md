@@ -6,7 +6,7 @@ tags:
 summary: An idle RPG with three adventuring modes, standing on the shoulders of Progress Quest.
 role: Solo – design and development
 tools: [Stencil, TypeScript, Capacitor]
-order: 4
+order: 5
 hero: /media/selecquest/hero.webp
 ogImage: /media/selecquest/hero.png
 heroAlt:
