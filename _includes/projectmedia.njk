@@ -5,8 +5,10 @@
   (e.g. [/media/x.webm, /media/x.mp4]); the browser plays the first it supports.
   Images get a srcset from any `<name>-<width>w` variants beside them; pass `sizes`
   for how wide the image renders, and `eager=true` when it is above the fold.
+  For an animated image, pass `still` (a single frame) to show instead when the
+  visitor prefers reduced motion – browsers don't pause animated images on their own.
 #}
-{% macro projectMedia(src, alt, label, zoomOnHover=false, sizes="100vw", eager=false) %}
+{% macro projectMedia(src, alt, label, zoomOnHover=false, sizes="100vw", eager=false, still="") %}
 <div class="aspect-[16/10] overflow-hidden rounded-md bg-bg-dark">
   {%- set mediaClass = "w-full h-full object-cover" + (" motion-safe:transition-transform motion-safe:duration-200 motion-safe:group-hover:scale-[1.02] motion-safe:group-focus-visible:scale-[1.02]" if zoomOnHover else "") -%}
   {%- set sources = [src] if src is string else src -%}
@@ -19,7 +21,9 @@
   </video>
   {%- elif first %}
   {%- set srcset = first | srcset %}
+  {%- if still %}<picture class="contents"><source media="(prefers-reduced-motion: reduce)" srcset="{{ still | url }}">{% endif %}
   <img class="{{ mediaClass }}" src="{{ first | url }}"{% if srcset %} srcset="{{ srcset }}" sizes="{{ sizes }}"{% endif %} alt="{{ alt }}" {% if eager %}fetchpriority="high"{% else %}loading="lazy"{% endif %}>
+  {%- if still %}</picture>{% endif %}
   {%- else %}
   <div class="w-full h-full flex items-center justify-center p-4 border border-divider rounded-md text-muted text-sm text-center" role="img" aria-label="{{ label }} – media coming soon">
     {{ label }}<br>media coming soon

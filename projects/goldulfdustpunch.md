@@ -7,7 +7,7 @@ tags:
 summary: A pixel-art dungeon-cleaning brawler for web and mobile.
 role: Solo – design, art, code
 tools: [Phaser 3, TypeScript, Capacitor]
-order: 3
+order: 4
 hero: /media/dustpunch/hero.webp
 ogImage: /media/dustpunch/hero.png
 heroAlt:
