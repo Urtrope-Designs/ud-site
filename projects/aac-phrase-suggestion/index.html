@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AAC Phrase Suggestion – Sean Cunningham</title>
+    <meta name="description" content="An AAC communication board that uses Claude to suggest the next words in context, so a message takes fewer taps.">
+    <link rel="canonical" href="https://urtropedesigns.com/projects/aac-phrase-suggestion/">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Sean Cunningham">
+    <meta property="og:title" content="AAC Phrase Suggestion – Sean Cunningham">
+    <meta property="og:description" content="An AAC communication board that uses Claude to suggest the next words in context, so a message takes fewer taps.">
+    <meta property="og:url" content="https://urtropedesigns.com/projects/aac-phrase-suggestion/">
+    <meta property="og:image" content="https://urtropedesigns.com/media/aac-phrase-suggestion/hero.png">
+    <meta property="og:image:alt" content="AAC Phrase Suggestion – Sean Cunningham">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AAC Phrase Suggestion – Sean Cunningham">
+    <meta name="twitter:description" content="An AAC communication board that uses Claude to suggest the next words in context, so a message takes fewer taps.">
+    <meta name="twitter:image" content="https://urtropedesigns.com/media/aac-phrase-suggestion/hero.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap">
+    <link rel="stylesheet" href="/assets/main.css">
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Sean Cunningham">
+  </head>
+  <body class="font-sans bg-bg-dark text-text min-h-screen flex flex-col">
+    <header class="sticky top-0 z-10 bg-bg-dark border-b border-divider">
+      <div class="max-w-[1100px] mx-auto px-4 tablet:px-6 py-4 flex flex-wrap items-baseline justify-between gap-x-8 gap-y-2">
+        <p class="font-headline font-bold text-lg enter"><a href="/" class="link-underline text-text">Sean Cunningham</a></p>
+        <ul class="font-headline flex gap-6 enter" style="--enter-i: 1">
+          <li><a href="/work/" class="link-underline text-text hover:text-accent">Work</a></li>
+          <li><a href="/about/" class="link-underline text-text hover:text-accent">About</a></li>
+          <li><a href="/resume.pdf" class="link-underline text-text hover:text-accent">Resume</a></li>
+        </ul>
+      </div>
+    </header>
+    <main class="flex-grow w-full max-w-[1100px] mx-auto px-4 tablet:px-6 pt-10 laptop:pt-16 tmpl-post enter" style="--enter-i: 2">
+      
+<article class="max-w-[720px] mx-auto">
+  <div class="mb-8">
+<div class="aspect-[16/10] overflow-hidden rounded-md bg-bg-dark"><picture class="contents"><source media="(prefers-reduced-motion: reduce)" srcset="/media/aac-phrase-suggestion/hero-still.webp">
+  <img class="w-full h-full object-cover" src="/media/aac-phrase-suggestion/hero.webp" srcset="/media/aac-phrase-suggestion/hero-640w.webp 640w, /media/aac-phrase-suggestion/hero-1280w.webp 1280w" sizes="(min-width: 768px) 720px, (min-width: 640px) calc(100vw - 3rem), calc(100vw - 2rem)" alt="Screen recording of the AAC board in dark mode, in a restaurant scenario. The server asks what they can get you to drink. After tapping &quot;I&quot; on the board, suggestion chips offer &quot;want water&quot;, &quot;need&quot;, &quot;like&quot; and &quot;would like water please&quot;; tapping &quot;want water&quot; and then &quot;please&quot; builds &quot;I want water please&quot;, which is sent. The server asks if you&#39;re ready to order food; tapping the suggestions &quot;yes&quot; and &quot;I want food&quot; builds the reply &quot;yes I want food&quot;." fetchpriority="high"></picture>
+</div>
+</div>
+
+  
+  <h1 class="font-headline font-bold text-4xl mb-3">AAC Phrase Suggestion</h1>
+  <p class="text-lg laptop:text-xl mb-4">An AAC communication board that uses Claude to suggest the next words in context, so a message takes fewer taps.</p>
+  
+  <dl class="flex flex-wrap gap-x-8 gap-y-1 mb-8 text-sm">
+    <div><dt class="inline text-secondary">My role:</dt> <dd class="inline">Solo – design and development</dd></div>
+    <div><dt class="inline text-secondary">Built with:</dt> <dd class="inline">Next.js, Claude API, TypeScript, Open Board Format</dd></div>
+  </dl>
+  
+
+  <div class="prose"><p><a href="https://aac.urtropedesigns.com">Try the live demo</a> · <a href="https://github.com/scunningham777/aac-phrase-suggestion">Source on GitHub</a></p>
+<h2>The problem</h2>
+<p>AAC (augmentative and alternative communication) boards let people who can't speak aloud build messages by tapping words or symbols, one at a time. That is slow, and in conversation the other person is usually left waiting. Most boards are static grids: they don't know what was just said to you or what you're probably trying to say next.</p>
+<p>Research on language-model prediction for AAC exists, but I couldn't find an open implementation that took it from paper to something you can actually use. So I built a prototype on the open <a href="https://www.openboardformat.org/">Open Board Format</a> standard to find out whether contextual suggestions really help.</p>
+<h2>What it does</h2>
+<p>You build a message on a standard word board. After every tap, the app sends three things to Claude Haiku: the message so far, the last few turns of the conversation, and the words on the current board. A row of 3–5 suggestions comes back – a likely next word, and a few short phrases that would finish the thought. Tapping one adds it to the message, and the finished message is spoken aloud with the browser's built-in speech.</p>
+<p>A few choices shaped how it feels to use:</p>
+<ul>
+<li><strong>Suggestions continue the message; they never rewrite it.</strong> The message stays in the user's own words, and the model is asked to prefer words that are on the board, so suggestions read like the board itself.</li>
+<li><strong>No surprise layout shifts.</strong> Requests are debounced and cancelled when you tap again. While new suggestions load, the old ones stay where they are but can't be used, rather than vanishing and moving the board under your finger.</li>
+<li><strong>Demo scenarios.</strong> Without real users to test with, scripted partners (a restaurant server, a friend, a doctor) supply the other side of the conversation. Each line is written so it can be answered from the sample board, so it's easy to see how suggestions change with context.</li>
+<li><strong>Any board.</strong> It loads any <code>.obf</code> file, not just the sample board.</li>
+</ul>
+<h2>Accessibility</h2>
+<p>An AAC tool has to work for the people who rely on assistive tech, so I tested it with axe and the NVDA screen reader rather than stopping at automated checks:</p>
+<ul>
+<li>The board is an ARIA grid: one Tab stop, with arrow keys, Home and End to move between words.</li>
+<li>NVDA kept intercepting the arrow keys until I read its source and found it only switches to focus mode for a focused grid <em>cell</em>, not a button inside one. Making the cells themselves the controls fixed it.</li>
+<li>The partner's lines and the number of new suggestions are announced, and controls that are temporarily unavailable keep keyboard focus instead of dropping it.</li>
+</ul>
+<h2>Keeping it affordable</h2>
+<p>The API key only lives on the server. Because the suggestion endpoint is public, it only answers requests from the app's own pages, is rate-limited per visitor with Upstash Redis, and sits behind a monthly spend cap.</p>
+<h2>What's next</h2>
+<p>The next step is an evaluation set for suggestion quality, so changes to the prompt can be measured instead of judged by feel.</p>
+</div>
+
+  <p class="font-headline mt-16"><a href="/" class="link-underline">← Home</a></p>
+</article>
+
+    </main>
+
+    <footer class="mt-16 laptop:mt-32 border-t border-divider">
+      <div class="max-w-[1100px] mx-auto px-4 tablet:px-6 py-8">
+        
+<ul class="flex flex-wrap gap-x-6 gap-y-2 font-headline">
+  <li><a href="mailto:scunningham77@proton.me" class="link-underline">Email</a></li>
+  <li>
+<a href="https://www.linkedin.com/in/sean-cunningham77" rel="me noopener" target="_blank" class="link-underline inline-flex items-center gap-1">LinkedIn<svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>
+  <span class="sr-only">(opens in a new tab)</span>
+</a>
+</li>
+  <li>
+<a href="https://github.com/scunningham777" rel="me noopener" target="_blank" class="link-underline inline-flex items-center gap-1">GitHub<svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>
+  <span class="sr-only">(opens in a new tab)</span>
+</a>
+</li>
+  <li><a href="/resume.pdf" class="link-underline">Resume (PDF)</a></li>
+</ul>
+
+        <p class="mt-4 text-sm text-muted">© 2026 Sean Cunningham</p>
+      </div>
+    </footer>
+
+    <!-- Current page: /projects/aac-phrase-suggestion/ -->
+  </body>
+</html>

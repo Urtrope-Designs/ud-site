@@ -1012,6 +1012,9 @@ video {
 .static {
   position: static;
 }
+.fixed {
+  position: fixed;
+}
 .sticky {
   position: sticky;
 }
@@ -1078,6 +1081,9 @@ video {
 }
 .grid {
   display: grid;
+}
+.contents {
+  display: contents;
 }
 .hidden {
   display: none;
