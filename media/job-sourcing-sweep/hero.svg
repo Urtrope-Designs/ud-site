@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Before and after: checking job boards by hand vs. an agent pipeline</title>
+  <desc id="desc">Before: for each of 7 job sources, search, then open every posting by hand – some are empty JavaScript shells, some are closed – check remote policy, pay and backend load, and copy it into the tracker, then repeat for every posting. After: one research agent per source, 7 in all, running 3 at a time. Each agent has server tools Anthropic runs (web_search, web_fetch) and client tools my code runs (list_company_jobs, get_job_posting) against the Ashby, Greenhouse, Lever and Workday job APIs. Its findings pass through four steps: extract (Claude, schema-checked), dedup (code), liveness (code), and screen (Claude Opus), then land in a Sweep inbox tab in Google Sheets as priority, candidate or exclude.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#00FFCF"/>
+    </marker>
+    <style>
+      .sans { font-family: Raleway, "Segoe UI", "Helvetica Neue", Arial, sans-serif; }
+      .head { font-family: "Montserrat Alternates", Montserrat, "Segoe UI", Arial, sans-serif; font-weight: 600; }
+      .mono { font-family: Consolas, "SF Mono", Menlo, "Courier New", monospace; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="1000" fill="#101929"/>
+
+  <!-- ============ BEFORE ============ -->
+  <text x="60" y="110" class="head" font-size="30" letter-spacing="4" fill="#FF7F5C">BEFORE</text>
+
+  <!-- stacked copies behind the front card -->
+  <rect x="108" y="142" width="520" height="670" rx="14" fill="#1a2b49" stroke="#6397eb" stroke-opacity="0.25" stroke-width="2"/>
+  <rect x="84" y="166" width="520" height="670" rx="14" fill="#1a2b49" stroke="#6397eb" stroke-opacity="0.4" stroke-width="2"/>
+
+  <!-- front card -->
+  <g>
+    <rect x="60" y="190" width="520" height="670" rx="14" fill="#1a2b49" stroke="#6397eb" stroke-opacity="0.7" stroke-width="2"/>
+    <text x="84" y="236" class="sans" font-size="24" fill="#6397eb">one job board, by hand</text>
+    <line x1="60" y1="256" x2="580" y2="256" stroke="#6397eb" stroke-opacity="0.35" stroke-width="2"/>
+
+    <g class="mono" font-size="20" fill="#ffffff">
+      <text x="84" y="298">search "senior frontend remote"</text>
+      <text x="84" y="332">for each result:</text>
+      <text x="108" y="366">open the posting</text>
+      <text x="132" y="400"><tspan fill="#FF7F5C">↳ empty "Jobs" page?</tspan></text>
+      <text x="132" y="434"><tspan fill="#FF7F5C">↳ still open?</tspan></text>
+      <text x="132" y="468"><tspan fill="#FF7F5C">↳ remote? pay? backend?</tspan></text>
+      <text x="108" y="502">copy it into the tracker</text>
+    </g>
+
+    <text x="84" y="556" class="sans" font-size="20" fill="#6397eb">and again, for every posting:</text>
+    <g class="mono" font-size="20" fill="#6397eb">
+      <text x="84" y="592" fill-opacity="0.85">open the posting…</text>
+      <text x="84" y="626" fill-opacity="0.75">open the posting…</text>
+      <text x="84" y="660" fill-opacity="0.65">open the posting…</text>
+      <text x="84" y="694" fill-opacity="0.55">open the posting…</text>
+      <text x="84" y="728" fill-opacity="0.45">open the posting…</text>
+      <text x="84" y="762" fill-opacity="0.35">open the posting…</text>
+      <text x="84" y="796" fill-opacity="0.25">open the posting…</text>
+      <text x="84" y="830" fill-opacity="0.15">open the posting…</text>
+    </g>
+  </g>
+
+  <!-- source-count badge -->
+  <circle cx="606" cy="150" r="46" fill="#FF7F5C"/>
+  <text x="606" y="162" text-anchor="middle" class="head" font-size="34" fill="#101929">×7</text>
+
+  <text x="60" y="930" class="sans" font-size="30" fill="#ffffff">7 job sources, checked by hand,</text>
+  <text x="60" y="970" class="sans" font-size="30" fill="#ffffff">one posting at a time</text>
+
+  <!-- divider -->
+  <line x1="690" y1="80" x2="690" y2="960" stroke="#6397eb" stroke-opacity="0.3" stroke-width="2" stroke-dasharray="8 10"/>
+
+  <!-- ============ AFTER ============ -->
+  <text x="740" y="110" class="head" font-size="30" letter-spacing="4" fill="#00FFCF">AFTER</text>
+
+  <!-- research worker -->
+  <rect x="740" y="142" width="800" height="232" rx="14" fill="#1a2b49" stroke="#00FFCF" stroke-width="3"/>
+  <text x="764" y="182" class="sans" font-size="22" fill="#6397eb">research agent per source · Sonnet, 3 at a time</text>
+
+  <text x="764" y="226" class="sans" font-size="18" fill="#6397eb">server tools · Anthropic</text>
+  <g class="mono" font-size="20" fill="#ffffff" text-anchor="middle">
+    <rect x="764" y="242" width="220" height="50" rx="25" fill="#101929" stroke="#6397eb" stroke-opacity="0.7" stroke-width="2"/>
+    <text x="874" y="274">web_search</text>
+    <rect x="764" y="304" width="220" height="50" rx="25" fill="#101929" stroke="#6397eb" stroke-opacity="0.7" stroke-width="2"/>
+    <text x="874" y="336">web_fetch</text>
+  </g>
+
+  <text x="1024" y="226" class="sans" font-size="18" fill="#00FFCF">client tools · my code</text>
+  <g class="mono" font-size="20" fill="#ffffff" text-anchor="middle">
+    <rect x="1024" y="242" width="260" height="50" rx="25" fill="#101929" stroke="#00FFCF" stroke-width="2"/>
+    <text x="1154" y="274">list_company_jobs</text>
+    <rect x="1024" y="304" width="260" height="50" rx="25" fill="#101929" stroke="#00FFCF" stroke-width="2"/>
+    <text x="1154" y="336">get_job_posting</text>
+  </g>
+  <g class="sans" font-size="18" fill="#ffffff" fill-opacity="0.7">
+    <text x="1304" y="268">Ashby, Greenhouse,</text>
+    <text x="1304" y="294">Lever and Workday</text>
+    <text x="1304" y="320">job APIs</text>
+  </g>
+
+  <!-- worker-count badge -->
+  <circle cx="1534" cy="150" r="46" fill="#00FFCF"/>
+  <text x="1534" y="162" text-anchor="middle" class="head" font-size="34" fill="#101929">×7</text>
+
+  <!-- arrow to pipeline -->
+  <path d="M1140,376 L1140,420" fill="none" stroke="#00FFCF" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <!-- pipeline steps: teal = Claude, blue = plain code -->
+  <g text-anchor="middle">
+    <rect x="740" y="426" width="182" height="110" rx="14" fill="#1a2b49" stroke="#00FFCF" stroke-opacity="0.8" stroke-width="2"/>
+    <text x="831" y="472" class="head" font-size="26" fill="#ffffff">extract</text>
+    <text x="831" y="506" class="sans" font-size="18" fill="#00FFCF">Claude · schema</text>
+
+    <rect x="946" y="426" width="182" height="110" rx="14" fill="#1a2b49" stroke="#6397eb" stroke-opacity="0.7" stroke-width="2"/>
+    <text x="1037" y="472" class="head" font-size="26" fill="#ffffff">dedup</text>
+    <text x="1037" y="506" class="sans" font-size="18" fill="#6397eb">code</text>
+
+    <rect x="1152" y="426" width="182" height="110" rx="14" fill="#1a2b49" stroke="#6397eb" stroke-opacity="0.7" stroke-width="2"/>
+    <text x="1243" y="472" class="head" font-size="26" fill="#ffffff">liveness</text>
+    <text x="1243" y="506" class="sans" font-size="18" fill="#6397eb">code</text>
+
+    <rect x="1358" y="426" width="182" height="110" rx="14" fill="#1a2b49" stroke="#00FFCF" stroke-opacity="0.8" stroke-width="2"/>
+    <text x="1449" y="472" class="head" font-size="26" fill="#ffffff">screen</text>
+    <text x="1449" y="506" class="sans" font-size="18" fill="#00FFCF">Claude Opus</text>
+  </g>
+  <g fill="#00FFCF">
+    <path d="M927,471 L941,481 L927,491 z"/>
+    <path d="M1133,471 L1147,481 L1133,491 z"/>
+    <path d="M1339,471 L1353,481 L1339,491 z"/>
+  </g>
+
+  <!-- arrow to inbox -->
+  <path d="M1140,538 L1140,584" fill="none" stroke="#00FFCF" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <!-- sweep inbox -->
+  <rect x="740" y="590" width="800" height="272" rx="14" fill="none" stroke="#6397eb" stroke-opacity="0.7" stroke-width="2"/>
+  <text x="764" y="630" class="sans" font-size="22" fill="#6397eb">Sweep inbox tab · Google Sheets</text>
+
+  <g class="sans" font-size="20" text-anchor="middle">
+    <rect x="764" y="652" width="150" height="44" rx="22" fill="#00FFCF"/>
+    <text x="839" y="681" fill="#101929">priority</text>
+    <rect x="764" y="720" width="150" height="44" rx="22" fill="#1a2b49" stroke="#00FFCF" stroke-opacity="0.6" stroke-width="2"/>
+    <text x="839" y="749" fill="#ffffff">candidate</text>
+    <rect x="764" y="788" width="150" height="44" rx="22" fill="none" stroke="#FF7F5C" stroke-width="2" stroke-dasharray="6 6"/>
+    <text x="839" y="817" fill="#FF7F5C">exclude</text>
+  </g>
+  <g class="sans" font-size="22" fill="#ffffff">
+    <text x="938" y="682">Senior Frontend Engineer · Remote US · $180–210K</text>
+    <text x="938" y="750">Staff UI Engineer · Remote US · confirm pay</text>
+    <text x="938" y="818" fill-opacity="0.55">Frontend Engineer · hybrid, NYC · fails remote</text>
+  </g>
+
+  <text x="740" y="930" class="sans" font-size="30" fill="#ffffff">Agents search and verify in parallel;</text>
+  <text x="740" y="970" class="sans" font-size="30" fill="#ffffff">only live, screened leads reach my inbox</text>
+</svg>
