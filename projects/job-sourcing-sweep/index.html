@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Sourcing Sweep – Sean Cunningham</title>
+    <meta name="description" content="A weekly pipeline of Claude agents that searches job boards, verifies every posting, and screens each lead against my criteria before it reaches my tracker.">
+    <link rel="canonical" href="https://urtropedesigns.com/projects/job-sourcing-sweep/">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Sean Cunningham">
+    <meta property="og:title" content="Job Sourcing Sweep – Sean Cunningham">
+    <meta property="og:description" content="A weekly pipeline of Claude agents that searches job boards, verifies every posting, and screens each lead against my criteria before it reaches my tracker.">
+    <meta property="og:url" content="https://urtropedesigns.com/projects/job-sourcing-sweep/">
+    <meta property="og:image" content="https://urtropedesigns.com/media/og-default.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Job Sourcing Sweep – Sean Cunningham">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Job Sourcing Sweep – Sean Cunningham">
+    <meta name="twitter:description" content="A weekly pipeline of Claude agents that searches job boards, verifies every posting, and screens each lead against my criteria before it reaches my tracker.">
+    <meta name="twitter:image" content="https://urtropedesigns.com/media/og-default.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap">
+    <link rel="stylesheet" href="/assets/main.css">
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Sean Cunningham">
+  </head>
+  <body class="font-sans bg-bg-dark text-text min-h-screen flex flex-col">
+    <header class="sticky top-0 z-10 bg-bg-dark border-b border-divider">
+      <div class="max-w-[1100px] mx-auto px-4 tablet:px-6 py-4 flex flex-wrap items-baseline justify-between gap-x-8 gap-y-2">
+        <p class="font-headline font-bold text-lg enter"><a href="/" class="link-underline text-text">Sean Cunningham</a></p>
+        <ul class="font-headline flex gap-6 enter" style="--enter-i: 1">
+          <li><a href="/work/" class="link-underline text-text hover:text-accent">Work</a></li>
+          <li><a href="/about/" class="link-underline text-text hover:text-accent">About</a></li>
+          <li><a href="/resume.pdf" class="link-underline text-text hover:text-accent">Resume</a></li>
+        </ul>
+      </div>
+    </header>
+    <main class="flex-grow w-full max-w-[1100px] mx-auto px-4 tablet:px-6 pt-10 laptop:pt-16 tmpl-post enter" style="--enter-i: 2">
+      
+<article class="max-w-[720px] mx-auto">
+  <div class="mb-8">
+<div class="aspect-[16/10] overflow-hidden rounded-md bg-bg-dark">
+  <img class="w-full h-full object-cover" src="/media/job-sourcing-sweep/hero.svg" alt="Before and after diagram. Before: for each of 7 job sources, search, then open every posting by hand – checking for empty pages, closed jobs, remote policy, pay and backend load – and copy it into the tracker. After: one research agent per source, 7 in all, 3 at a time. Each agent has server tools Anthropic runs (web search and web fetch) and client tools my code runs (list company jobs and get job posting) against the Ashby, Greenhouse, Lever and Workday job APIs. Findings pass through extract (Claude), dedup (code), liveness (code) and screen (Claude Opus), then land in a Sweep inbox tab in Google Sheets as priority, candidate or exclude." fetchpriority="high">
+</div>
+</div>
+
+  
+  <h1 class="font-headline font-bold text-4xl mb-3">Job Sourcing Sweep</h1>
+  <p class="text-lg laptop:text-xl mb-4">A weekly pipeline of Claude agents that searches job boards, verifies every posting, and screens each lead against my criteria before it reaches my tracker.</p>
+  
+  <dl class="flex flex-wrap gap-x-8 gap-y-1 mb-8 text-sm">
+    <div><dt class="inline text-secondary">My role:</dt> <dd class="inline">Solo – design and development</dd></div>
+    <div><dt class="inline text-secondary">Built with:</dt> <dd class="inline">Python, Claude API, Pydantic, Google Sheets API</dd></div>
+  </dl>
+  
+
+  <div class="prose"><p><a href="https://github.com/scunningham777/job-sourcing-sweep">Source on GitHub</a></p>
+<h2>The problem</h2>
+<p>A job search means checking the same boards every week: company boards on Ashby, Greenhouse and Lever, Hacker News &quot;Who is hiring?&quot;, Built In, staffing agencies, and local employers on Workday. Most of the time doesn't go into finding postings – it goes into opening them, only to learn the job is closed, hybrid, underpaid or mostly backend, or that it's already in my tracker.</p>
+<p>I wanted something that does that legwork every week and hands me a short list, judged against the same written criteria I'd use myself. It was also a chance to build an agent system by hand – without a framework – so I'd understand every moving part.</p>
+<h2>How it works</h2>
+<p>Each run fans out one research agent per job source on Claude Sonnet, three at a time. Each agent searches the web, opens the promising postings, and writes up what it found. From there:</p>
+<ul>
+<li><strong>Extract.</strong> A separate structured-output call turns each write-up into validated leads, using a Pydantic schema as the contract. Splitting research from extraction lets the research prompt think freely, and extraction can be re-run cheaply without searching again.</li>
+<li><strong>Dedup.</strong> Plain code compares leads against my tracker sheet by normalized URL, and catches the same role posted on two boards by normalized company and title.</li>
+<li><strong>Liveness.</strong> Plain code checks that every posting is still open. Agents can't reliably tell, because some boards keep serving the full description of a closed job.</li>
+<li><strong>Screen.</strong> Claude Opus judges every remaining lead against my written criteria – priority, candidate or exclude – ties each reason to a specific criterion, and writes notes in the same voice as my tracker.</li>
+</ul>
+<p>Results are appended to a &quot;Sweep inbox&quot; tab in my Google Sheet. Promoting a lead to the tracker stays my call. Separate tracks – remote full-time roles, or local contract work – each have their own criteria file and their own sources.</p>
+<h2>Giving the agents better tools</h2>
+<p>Early runs dropped good leads. Ashby and Workday posting pages are rendered by JavaScript, so when an agent fetched one it often got back an empty &quot;Jobs&quot; page and couldn't verify the posting. No prompt change can fix that.</p>
+<p>Every one of those applicant-tracking systems serves the same postings as JSON, though. So I gave the agents two tools of my own: <code>list_company_jobs</code> lists a company's open postings, filtered by title, and <code>get_job_posting</code> returns one posting's full description and pay range – or tells the agent it's closed. Unlike web search, Anthropic doesn't run these tools: the model asks for a call, my code makes the request and sends back trimmed JSON, and the loop carries on. Errors go back the same way, so a wrong company name is something the agent can recover from instead of a crash.</p>
+<p>On the first run with the new tools, the Ashby agent made 16 API calls and no page fetches at all, and checked every posting it reported against the board itself. The same API client now powers the liveness check, so Workday leads no longer come back &quot;unconfirmed&quot;.</p>
+<h2>Keeping it cheap and checkable</h2>
+<ul>
+<li><strong>Deterministic work stays out of the model.</strong> Dedup, liveness and URL checks are plain code with offline unit tests – cheaper, faster and predictable.</li>
+<li><strong>Every agent has a budget.</strong> Searches, page fetches and API calls are capped per source, and results are trimmed, because everything a tool returns is paid for as input on the next turn.</li>
+<li><strong>Every run prices itself.</strong> The sweep reads the API's usage numbers and prints a cost breakdown – a full run across five sources costs about $2–3 – and logs per-source stats, so I can see which sources actually turn up leads worth applying to.</li>
+</ul>
+<h2>What's next</h2>
+<p>The job-board client has no dependency on Claude, by design. Next I'll move it into its own MCP server, so any agent – not just this one – can search company job boards directly.</p>
+</div>
+
+  <p class="font-headline mt-16"><a href="/" class="link-underline">← Home</a></p>
+</article>
+
+    </main>
+
+    <footer class="mt-16 laptop:mt-32 border-t border-divider">
+      <div class="max-w-[1100px] mx-auto px-4 tablet:px-6 py-8">
+        
+<ul class="flex flex-wrap gap-x-6 gap-y-2 font-headline">
+  <li><a href="mailto:scunningham77@proton.me" class="link-underline">Email</a></li>
+  <li>
+<a href="https://www.linkedin.com/in/sean-cunningham77" rel="me noopener" target="_blank" class="link-underline inline-flex items-center gap-1">LinkedIn<svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>
+  <span class="sr-only">(opens in a new tab)</span>
+</a>
+</li>
+  <li>
+<a href="https://github.com/scunningham777" rel="me noopener" target="_blank" class="link-underline inline-flex items-center gap-1">GitHub<svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>
+  <span class="sr-only">(opens in a new tab)</span>
+</a>
+</li>
+  <li><a href="/resume.pdf" class="link-underline">Resume (PDF)</a></li>
+</ul>
+
+        <p class="mt-4 text-sm text-muted">© 2026 Sean Cunningham</p>
+      </div>
+    </footer>
+
+    <!-- Current page: /projects/job-sourcing-sweep/ -->
+  </body>
+</html>

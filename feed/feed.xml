@@ -4,7 +4,7 @@
 	<subtitle>I build technology for humans.</subtitle>
 	<link href="https://myurl.com/feed/feed.xml" rel="self"/>
 	<link href="https://urtropedesigns.com/"/>
-	<updated>2026-10-09T02:58:29Z</updated>
+	<updated>2026-10-09T03:00:04Z</updated>
 	<id>https://myurl.com/</id>
 	<author>
 		<name>Sean Cunningham</name>
@@ -14,7 +14,7 @@
 	<entry>
 		<title>AAC Phrase Suggestion</title>
 		<link href="https://urtropedesigns.com/projects/aac-phrase-suggestion/"/>
-		<updated>2026-10-09T02:58:29Z</updated>
+		<updated>2026-10-09T03:00:04Z</updated>
 		<id>https://urtropedesigns.com/projects/aac-phrase-suggestion/</id>
 		<content type="html">&lt;p&gt;&lt;a href=&quot;https://aac.urtropedesigns.com/&quot;&gt;Try the live demo&lt;/a&gt; · &lt;a href=&quot;https://github.com/scunningham777/aac-phrase-suggestion&quot;&gt;Source on GitHub&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;The problem&lt;/h2&gt;
@@ -46,7 +46,7 @@
 	<entry>
 		<title>Barenziah Tracker</title>
 		<link href="https://urtropedesigns.com/projects/barenziahtracker/"/>
-		<updated>2026-10-09T02:58:29Z</updated>
+		<updated>2026-10-09T03:00:04Z</updated>
 		<id>https://urtropedesigns.com/projects/barenziahtracker/</id>
 		<content type="html">&lt;p&gt;Trying to pwn Skyrim by tracking down all the Stones of Barenziah, but can&#39;t remember which ones you&#39;ve gotten already or where to look for the rest? Then you&#39;ve come to the fortuitest place!&lt;/p&gt;
 &lt;p&gt;This app will help you hunt down all 24 Stones in the &amp;quot;Unusual Gem&amp;quot; / &amp;quot;No Stone Unturned&amp;quot; questline: simply tap any stone in the list to see the location on the map as well as a screenshot of the stone within the location.&lt;/p&gt;
@@ -70,7 +70,7 @@
 	<entry>
 		<title>Goldulf - Dustpunch!</title>
 		<link href="https://urtropedesigns.com/projects/goldulfdustpunch/"/>
-		<updated>2026-10-09T02:58:29Z</updated>
+		<updated>2026-10-09T03:00:04Z</updated>
 		<id>https://urtropedesigns.com/projects/goldulfdustpunch/</id>
 		<content type="html">&lt;p&gt;Huff! Puff! Clean up some stuff! As the lone surviving member of the (weirdly) unnamed clan that beat back the spectre of that ultimate evil - Goldulf! - in ages past, it is now your duty to tidy up a bit and release the souls of your forbears, which are basically just stuck there because there&#39;s so much junk everywhere. Armed with the only tool you&#39;ll need (I&#39;m talking pixel-perfect fists), punch your way through endless Intellivision-looking dungeons in this, uh, game.&lt;/p&gt;
 &lt;img alt=&quot;Punching some dust&quot; src=&quot;https://urtropedesigns.com/media/dustpunch/punchin_dust.webp&quot; width=&quot;1089&quot; height=&quot;768&quot; loading=&quot;lazy&quot; /&gt;
@@ -80,9 +80,42 @@
 	</entry>
 	
 	<entry>
+		<title>Job Sourcing Sweep</title>
+		<link href="https://urtropedesigns.com/projects/job-sourcing-sweep/"/>
+		<updated>2026-10-09T03:00:04Z</updated>
+		<id>https://urtropedesigns.com/projects/job-sourcing-sweep/</id>
+		<content type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/scunningham777/job-sourcing-sweep&quot;&gt;Source on GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;The problem&lt;/h2&gt;
+&lt;p&gt;A job search means checking the same boards every week: company boards on Ashby, Greenhouse and Lever, Hacker News &amp;quot;Who is hiring?&amp;quot;, Built In, staffing agencies, and local employers on Workday. Most of the time doesn&#39;t go into finding postings – it goes into opening them, only to learn the job is closed, hybrid, underpaid or mostly backend, or that it&#39;s already in my tracker.&lt;/p&gt;
+&lt;p&gt;I wanted something that does that legwork every week and hands me a short list, judged against the same written criteria I&#39;d use myself. It was also a chance to build an agent system by hand – without a framework – so I&#39;d understand every moving part.&lt;/p&gt;
+&lt;h2&gt;How it works&lt;/h2&gt;
+&lt;p&gt;Each run fans out one research agent per job source on Claude Sonnet, three at a time. Each agent searches the web, opens the promising postings, and writes up what it found. From there:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Extract.&lt;/strong&gt; A separate structured-output call turns each write-up into validated leads, using a Pydantic schema as the contract. Splitting research from extraction lets the research prompt think freely, and extraction can be re-run cheaply without searching again.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Dedup.&lt;/strong&gt; Plain code compares leads against my tracker sheet by normalized URL, and catches the same role posted on two boards by normalized company and title.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Liveness.&lt;/strong&gt; Plain code checks that every posting is still open. Agents can&#39;t reliably tell, because some boards keep serving the full description of a closed job.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Screen.&lt;/strong&gt; Claude Opus judges every remaining lead against my written criteria – priority, candidate or exclude – ties each reason to a specific criterion, and writes notes in the same voice as my tracker.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Results are appended to a &amp;quot;Sweep inbox&amp;quot; tab in my Google Sheet. Promoting a lead to the tracker stays my call. Separate tracks – remote full-time roles, or local contract work – each have their own criteria file and their own sources.&lt;/p&gt;
+&lt;h2&gt;Giving the agents better tools&lt;/h2&gt;
+&lt;p&gt;Early runs dropped good leads. Ashby and Workday posting pages are rendered by JavaScript, so when an agent fetched one it often got back an empty &amp;quot;Jobs&amp;quot; page and couldn&#39;t verify the posting. No prompt change can fix that.&lt;/p&gt;
+&lt;p&gt;Every one of those applicant-tracking systems serves the same postings as JSON, though. So I gave the agents two tools of my own: &lt;code&gt;list_company_jobs&lt;/code&gt; lists a company&#39;s open postings, filtered by title, and &lt;code&gt;get_job_posting&lt;/code&gt; returns one posting&#39;s full description and pay range – or tells the agent it&#39;s closed. Unlike web search, Anthropic doesn&#39;t run these tools: the model asks for a call, my code makes the request and sends back trimmed JSON, and the loop carries on. Errors go back the same way, so a wrong company name is something the agent can recover from instead of a crash.&lt;/p&gt;
+&lt;p&gt;On the first run with the new tools, the Ashby agent made 16 API calls and no page fetches at all, and checked every posting it reported against the board itself. The same API client now powers the liveness check, so Workday leads no longer come back &amp;quot;unconfirmed&amp;quot;.&lt;/p&gt;
+&lt;h2&gt;Keeping it cheap and checkable&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Deterministic work stays out of the model.&lt;/strong&gt; Dedup, liveness and URL checks are plain code with offline unit tests – cheaper, faster and predictable.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Every agent has a budget.&lt;/strong&gt; Searches, page fetches and API calls are capped per source, and results are trimmed, because everything a tool returns is paid for as input on the next turn.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Every run prices itself.&lt;/strong&gt; The sweep reads the API&#39;s usage numbers and prints a cost breakdown – a full run across five sources costs about $2–3 – and logs per-source stats, so I can see which sources actually turn up leads worth applying to.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;What&#39;s next&lt;/h2&gt;
+&lt;p&gt;The job-board client has no dependency on Claude, by design. Next I&#39;ll move it into its own MCP server, so any agent – not just this one – can search company job boards directly.&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
 		<title>Skyrim Potion Companion</title>
 		<link href="https://urtropedesigns.com/projects/potioncompanion/"/>
-		<updated>2026-10-09T02:58:29Z</updated>
+		<updated>2026-10-09T03:00:04Z</updated>
 		<id>https://urtropedesigns.com/projects/potioncompanion/</id>
 		<content type="html">&lt;h2&gt;Brew the most potent potions; now with 50% more ease!&lt;/h2&gt;
 &lt;ul&gt;
@@ -105,7 +138,7 @@
 	<entry>
 		<title>Reusable Table Rows for Ad-Sales Dashboards</title>
 		<link href="https://urtropedesigns.com/projects/reusable-table-rows/"/>
-		<updated>2026-10-09T02:58:29Z</updated>
+		<updated>2026-10-09T03:00:04Z</updated>
 		<id>https://urtropedesigns.com/projects/reusable-table-rows/</id>
 		<content type="html">&lt;!-- DRAFT copy – check details before publishing. NDA-safe: no real screens, client or data. --&gt;
 &lt;h2&gt;The problem&lt;/h2&gt;
@@ -122,7 +155,7 @@
 	<entry>
 		<title>SelecQuest</title>
 		<link href="https://urtropedesigns.com/projects/selecquest/"/>
-		<updated>2026-10-09T02:58:29Z</updated>
+		<updated>2026-10-09T03:00:04Z</updated>
 		<id>https://urtropedesigns.com/projects/selecquest/</id>
 		<content type="html">&lt;p&gt;Welcome to the home of SelecQuest, with three adventuring modes!&lt;/p&gt;
 &lt;video width=&quot;886&quot; height=&quot;834&quot; autoplay=&quot;&quot; muted=&quot;&quot; loop=&quot;&quot; playsinline=&quot;&quot; aria-label=&quot;Playing SelecQuest&quot;&gt;
