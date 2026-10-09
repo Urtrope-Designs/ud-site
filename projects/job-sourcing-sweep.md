@@ -6,7 +6,7 @@ tags:
   - ai
   - agents
 summary: A weekly pipeline of Claude agents that searches job boards, verifies every posting, and screens each lead against my criteria before it reaches my tracker.
-role: Solo – design and development
+role: Design and product decisions – built with Claude Code
 tools: [Python, Claude API, Pydantic, Google Sheets API]
 order: 3
 hero: /media/job-sourcing-sweep/hero.svg
@@ -17,7 +17,7 @@ heroAlt: "Before and after diagram. Before: for each of 7 job sources, search, t
 ## The problem
 A job search means checking the same boards every week: company boards on Ashby, Greenhouse and Lever, Hacker News "Who is hiring?", Built In, staffing agencies, and local employers on Workday. Most of the time doesn't go into finding postings – it goes into opening them, only to learn the job is closed, hybrid, underpaid or mostly backend, or that it's already in my tracker.
 
-I wanted something that does that legwork every week and hands me a short list, judged against the same written criteria I'd use myself. It was also a chance to build an agent system by hand – without a framework – so I'd understand every moving part.
+I wanted something that does that legwork every week and hands me a short list, judged against the same written criteria I'd use myself. It was also a chance to build an agent system without a framework. I built it with Claude Code, then worked through the generated code until I understood every moving part.
 
 ## How it works
 Each run fans out one research agent per job source on Claude Sonnet, three at a time. Each agent searches the web, opens the promising postings, and writes up what it found. From there:
