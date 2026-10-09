@@ -51,7 +51,7 @@
   <p class="text-lg laptop:text-xl mb-4">An AAC communication board that uses Claude to suggest the next words in context, so a message takes fewer taps.</p>
   
   <dl class="flex flex-wrap gap-x-8 gap-y-1 mb-8 text-sm">
-    <div><dt class="inline text-secondary">My role:</dt> <dd class="inline">Solo – design and development</dd></div>
+    <div><dt class="inline text-secondary">My role:</dt> <dd class="inline">Design, product decisions and testing – built with Claude Code</dd></div>
     <div><dt class="inline text-secondary">Built with:</dt> <dd class="inline">Next.js, Claude API, TypeScript, Open Board Format</dd></div>
   </dl>
   
@@ -59,7 +59,7 @@
   <div class="prose"><p><a href="https://aac.urtropedesigns.com">Try the live demo</a> · <a href="https://github.com/scunningham777/aac-phrase-suggestion">Source on GitHub</a></p>
 <h2>The problem</h2>
 <p>AAC (augmentative and alternative communication) boards let people who can't speak aloud build messages by tapping words or symbols, one at a time. That is slow, and in conversation the other person is usually left waiting. Most boards are static grids: they don't know what was just said to you or what you're probably trying to say next.</p>
-<p>Research on language-model prediction for AAC exists, but I couldn't find an open implementation that took it from paper to something you can actually use. So I built a prototype on the open <a href="https://www.openboardformat.org/">Open Board Format</a> standard to find out whether contextual suggestions really help.</p>
+<p>Research on language-model prediction for AAC exists, but I couldn't find an open implementation that took it from paper to something you can actually use. So I designed a prototype on the open <a href="https://www.openboardformat.org/">Open Board Format</a> standard and built it with Claude Code, to find out whether contextual suggestions really help.</p>
 <h2>What it does</h2>
 <p>You build a message on a standard word board. After every tap, the app sends three things to Claude Haiku: the message so far, the last few turns of the conversation, and the words on the current board. A row of 3–5 suggestions comes back – a likely next word, and a few short phrases that would finish the thought. Tapping one adds it to the message, and the finished message is spoken aloud with the browser's built-in speech.</p>
 <p>A few choices shaped how it feels to use:</p>
@@ -73,7 +73,7 @@
 <p>An AAC tool has to work for the people who rely on assistive tech, so I tested it with axe and the NVDA screen reader rather than stopping at automated checks:</p>
 <ul>
 <li>The board is an ARIA grid: one Tab stop, with arrow keys, Home and End to move between words.</li>
-<li>NVDA kept intercepting the arrow keys until I read its source and found it only switches to focus mode for a focused grid <em>cell</em>, not a button inside one. Making the cells themselves the controls fixed it.</li>
+<li>In my testing, NVDA kept intercepting the arrow keys. Claude traced the cause in NVDA's source: it only switches to focus mode for a focused grid <em>cell</em>, not a button inside one. Making the cells themselves the controls fixed it.</li>
 <li>The partner's lines and the number of new suggestions are announced, and controls that are temporarily unavailable keep keyboard focus instead of dropping it.</li>
 </ul>
 <h2>Keeping it affordable</h2>

@@ -4,7 +4,7 @@
 	<subtitle>I build technology for humans.</subtitle>
 	<link href="https://myurl.com/feed/feed.xml" rel="self"/>
 	<link href="https://urtropedesigns.com/"/>
-	<updated>2026-10-09T03:47:24Z</updated>
+	<updated>2026-10-09T03:48:24Z</updated>
 	<id>https://myurl.com/</id>
 	<author>
 		<name>Sean Cunningham</name>
@@ -14,12 +14,12 @@
 	<entry>
 		<title>AAC Phrase Suggestion</title>
 		<link href="https://urtropedesigns.com/projects/aac-phrase-suggestion/"/>
-		<updated>2026-10-09T03:47:24Z</updated>
+		<updated>2026-10-09T03:48:24Z</updated>
 		<id>https://urtropedesigns.com/projects/aac-phrase-suggestion/</id>
 		<content type="html">&lt;p&gt;&lt;a href=&quot;https://aac.urtropedesigns.com/&quot;&gt;Try the live demo&lt;/a&gt; · &lt;a href=&quot;https://github.com/scunningham777/aac-phrase-suggestion&quot;&gt;Source on GitHub&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;The problem&lt;/h2&gt;
 &lt;p&gt;AAC (augmentative and alternative communication) boards let people who can&#39;t speak aloud build messages by tapping words or symbols, one at a time. That is slow, and in conversation the other person is usually left waiting. Most boards are static grids: they don&#39;t know what was just said to you or what you&#39;re probably trying to say next.&lt;/p&gt;
-&lt;p&gt;Research on language-model prediction for AAC exists, but I couldn&#39;t find an open implementation that took it from paper to something you can actually use. So I built a prototype on the open &lt;a href=&quot;https://www.openboardformat.org/&quot;&gt;Open Board Format&lt;/a&gt; standard to find out whether contextual suggestions really help.&lt;/p&gt;
+&lt;p&gt;Research on language-model prediction for AAC exists, but I couldn&#39;t find an open implementation that took it from paper to something you can actually use. So I designed a prototype on the open &lt;a href=&quot;https://www.openboardformat.org/&quot;&gt;Open Board Format&lt;/a&gt; standard and built it with Claude Code, to find out whether contextual suggestions really help.&lt;/p&gt;
 &lt;h2&gt;What it does&lt;/h2&gt;
 &lt;p&gt;You build a message on a standard word board. After every tap, the app sends three things to Claude Haiku: the message so far, the last few turns of the conversation, and the words on the current board. A row of 3–5 suggestions comes back – a likely next word, and a few short phrases that would finish the thought. Tapping one adds it to the message, and the finished message is spoken aloud with the browser&#39;s built-in speech.&lt;/p&gt;
 &lt;p&gt;A few choices shaped how it feels to use:&lt;/p&gt;
@@ -33,7 +33,7 @@
 &lt;p&gt;An AAC tool has to work for the people who rely on assistive tech, so I tested it with axe and the NVDA screen reader rather than stopping at automated checks:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;The board is an ARIA grid: one Tab stop, with arrow keys, Home and End to move between words.&lt;/li&gt;
-&lt;li&gt;NVDA kept intercepting the arrow keys until I read its source and found it only switches to focus mode for a focused grid &lt;em&gt;cell&lt;/em&gt;, not a button inside one. Making the cells themselves the controls fixed it.&lt;/li&gt;
+&lt;li&gt;In my testing, NVDA kept intercepting the arrow keys. Claude traced the cause in NVDA&#39;s source: it only switches to focus mode for a focused grid &lt;em&gt;cell&lt;/em&gt;, not a button inside one. Making the cells themselves the controls fixed it.&lt;/li&gt;
 &lt;li&gt;The partner&#39;s lines and the number of new suggestions are announced, and controls that are temporarily unavailable keep keyboard focus instead of dropping it.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Keeping it affordable&lt;/h2&gt;
@@ -46,7 +46,7 @@
 	<entry>
 		<title>Barenziah Tracker</title>
 		<link href="https://urtropedesigns.com/projects/barenziahtracker/"/>
-		<updated>2026-10-09T03:47:24Z</updated>
+		<updated>2026-10-09T03:48:24Z</updated>
 		<id>https://urtropedesigns.com/projects/barenziahtracker/</id>
 		<content type="html">&lt;p&gt;Trying to pwn Skyrim by tracking down all the Stones of Barenziah, but can&#39;t remember which ones you&#39;ve gotten already or where to look for the rest? Then you&#39;ve come to the fortuitest place!&lt;/p&gt;
 &lt;p&gt;This app will help you hunt down all 24 Stones in the &amp;quot;Unusual Gem&amp;quot; / &amp;quot;No Stone Unturned&amp;quot; questline: simply tap any stone in the list to see the location on the map as well as a screenshot of the stone within the location.&lt;/p&gt;
@@ -70,7 +70,7 @@
 	<entry>
 		<title>Goldulf - Dustpunch!</title>
 		<link href="https://urtropedesigns.com/projects/goldulfdustpunch/"/>
-		<updated>2026-10-09T03:47:24Z</updated>
+		<updated>2026-10-09T03:48:24Z</updated>
 		<id>https://urtropedesigns.com/projects/goldulfdustpunch/</id>
 		<content type="html">&lt;p&gt;Huff! Puff! Clean up some stuff! As the lone surviving member of the (weirdly) unnamed clan that beat back the spectre of that ultimate evil - Goldulf! - in ages past, it is now your duty to tidy up a bit and release the souls of your forbears, which are basically just stuck there because there&#39;s so much junk everywhere. Armed with the only tool you&#39;ll need (I&#39;m talking pixel-perfect fists), punch your way through endless Intellivision-looking dungeons in this, uh, game.&lt;/p&gt;
 &lt;img alt=&quot;Punching some dust&quot; src=&quot;https://urtropedesigns.com/media/dustpunch/punchin_dust.webp&quot; width=&quot;1089&quot; height=&quot;768&quot; loading=&quot;lazy&quot; /&gt;
@@ -82,12 +82,12 @@
 	<entry>
 		<title>Job Sourcing Sweep</title>
 		<link href="https://urtropedesigns.com/projects/job-sourcing-sweep/"/>
-		<updated>2026-10-09T03:47:24Z</updated>
+		<updated>2026-10-09T03:48:24Z</updated>
 		<id>https://urtropedesigns.com/projects/job-sourcing-sweep/</id>
 		<content type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/scunningham777/job-sourcing-sweep&quot;&gt;Source on GitHub&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;The problem&lt;/h2&gt;
 &lt;p&gt;A job search means checking the same boards every week: company boards on Ashby, Greenhouse and Lever, Hacker News &amp;quot;Who is hiring?&amp;quot;, Built In, staffing agencies, and local employers on Workday. Most of the time doesn&#39;t go into finding postings – it goes into opening them, only to learn the job is closed, hybrid, underpaid or mostly backend, or that it&#39;s already in my tracker.&lt;/p&gt;
-&lt;p&gt;I wanted something that does that legwork every week and hands me a short list, judged against the same written criteria I&#39;d use myself. It was also a chance to build an agent system by hand – without a framework – so I&#39;d understand every moving part.&lt;/p&gt;
+&lt;p&gt;I wanted something that does that legwork every week and hands me a short list, judged against the same written criteria I&#39;d use myself. It was also a chance to build an agent system without a framework. I built it with Claude Code, then worked through the generated code until I understood every moving part.&lt;/p&gt;
 &lt;h2&gt;How it works&lt;/h2&gt;
 &lt;p&gt;Each run fans out one research agent per job source on Claude Sonnet, three at a time. Each agent searches the web, opens the promising postings, and writes up what it found. From there:&lt;/p&gt;
 &lt;ul&gt;
@@ -115,7 +115,7 @@
 	<entry>
 		<title>Skyrim Potion Companion</title>
 		<link href="https://urtropedesigns.com/projects/potioncompanion/"/>
-		<updated>2026-10-09T03:47:24Z</updated>
+		<updated>2026-10-09T03:48:24Z</updated>
 		<id>https://urtropedesigns.com/projects/potioncompanion/</id>
 		<content type="html">&lt;h2&gt;Brew the most potent potions; now with 50% more ease!&lt;/h2&gt;
 &lt;ul&gt;
@@ -138,7 +138,7 @@
 	<entry>
 		<title>Reusable Table Rows for Ad-Sales Dashboards</title>
 		<link href="https://urtropedesigns.com/projects/reusable-table-rows/"/>
-		<updated>2026-10-09T03:47:24Z</updated>
+		<updated>2026-10-09T03:48:24Z</updated>
 		<id>https://urtropedesigns.com/projects/reusable-table-rows/</id>
 		<content type="html">&lt;!-- DRAFT copy – check details before publishing. NDA-safe: no real screens, client or data. --&gt;
 &lt;h2&gt;The problem&lt;/h2&gt;
@@ -155,7 +155,7 @@
 	<entry>
 		<title>SelecQuest</title>
 		<link href="https://urtropedesigns.com/projects/selecquest/"/>
-		<updated>2026-10-09T03:47:24Z</updated>
+		<updated>2026-10-09T03:48:24Z</updated>
 		<id>https://urtropedesigns.com/projects/selecquest/</id>
 		<content type="html">&lt;p&gt;Welcome to the home of SelecQuest, with three adventuring modes!&lt;/p&gt;
 &lt;video width=&quot;886&quot; height=&quot;834&quot; autoplay=&quot;&quot; muted=&quot;&quot; loop=&quot;&quot; playsinline=&quot;&quot; aria-label=&quot;Playing SelecQuest&quot;&gt;
